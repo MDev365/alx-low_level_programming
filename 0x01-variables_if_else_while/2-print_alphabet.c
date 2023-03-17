@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**
+   * main - print the alphapet with putchark
+   *
+   * Return: 0
+   */
+int main(void)
+{
+	char ch = 'a';
+
+	while (c <= 'z')
+	{
+		putchar(ch);
+		ch++;
+	}
+
+	putchar('\n');
+	return (0);
+}
