@@ -20,4 +20,5 @@ int main(void)
 		printf(", %i", m);
 	}
 	printf("\n");
+	return (0);
 }
