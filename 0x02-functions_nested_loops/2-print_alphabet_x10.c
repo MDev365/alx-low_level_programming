@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_alphabet_10x - print 10 time the alphabet
+ * print_alphabet_x10 - print 10 time the alphabet
  *
  * Return: void
  */
 
-void print_alphabet_10x(void)
+void print_alphabet_x10(void)
 {
 	char c;
 	int i;
