@@ -20,6 +20,8 @@ void times_table(void)
 			}
 			else
 				_putchar(t + '0');
+			_putchar(',');
+			_putchar(' ');
 		}
 		_putchar('$');
 		_putchar('\n');
