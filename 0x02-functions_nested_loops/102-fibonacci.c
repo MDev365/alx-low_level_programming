@@ -12,7 +12,7 @@ int main(void)
 	a = 1;
 	b = 2;
 	printf("%ld, %ld", a, b);
-	for (i = 1 ; i <= 50 ; i++)
+	for (i = 1 ; i <= 48 ; i++)
 	{
 		m = a + b;
 		a = b;
