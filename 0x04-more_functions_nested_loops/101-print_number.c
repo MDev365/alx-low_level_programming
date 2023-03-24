@@ -25,7 +25,7 @@ void print_number(int n)
 		c = 0;
 
 		i = n / (int) pow(10, 9);
-		if ( i > 0 || c != 0)
+		if (i > 0 || c != 0)
 		{
 			_putchar(i + '0');
 			n = n % (int) pow(10, 9);
@@ -33,7 +33,7 @@ void print_number(int n)
 		}
 
 		i = n / (int) pow(10, 8);
-		if ( i > 0 || c != 0)
+		if (i > 0 || c != 0)
 		{
 			_putchar(i + '0');
 			n = n % (int) pow(10, 8);
@@ -41,7 +41,7 @@ void print_number(int n)
 		}
 
 		i = n / (int) pow(10, 7);
-		if ( i > 0 || c != 0)
+		if (i > 0 || c != 0)
 		{
 			_putchar(i + '0');
 			n = n % (int) pow(10, 7);
@@ -49,7 +49,7 @@ void print_number(int n)
 		}
 
 		i = n / (int) pow(10, 6);
-		if ( i > 0 || c != 0)
+		if (i > 0 || c != 0)
 		{
 			_putchar(i + '0');
 			n = n % (int) pow(10, 6);
@@ -57,7 +57,7 @@ void print_number(int n)
 		}
 
 		i = n / (int) pow(10, 5);
-		if ( i > 0 || c != 0)
+		if (i > 0 || c != 0)
 		{
 			_putchar(i + '0');
 			n = n % (int) pow(10, 5);
@@ -65,7 +65,7 @@ void print_number(int n)
 		}
 
 		i = n / (int) pow(10, 4);
-		if ( i > 0 || c != 0)
+		if (i > 0 || c != 0)
 		{
 			_putchar(i + '0');
 			n = n % (int) pow(10, 4);
@@ -73,7 +73,7 @@ void print_number(int n)
 		}
 
 		i = n / (int) pow(10, 3);
-		if ( i > 0 || c != 0)
+		if (i > 0 || c != 0)
 		{
 			_putchar(i + '0');
 			n = n % (int) pow(10, 3);
@@ -81,7 +81,7 @@ void print_number(int n)
 		}
 
 		i = n / (int) pow(10, 2);
-		if ( i > 0 || c != 0)
+		if (i > 0 || c != 0)
 		{
 			_putchar(i + '0');
 			n = n % (int) pow(10, 2);
@@ -89,14 +89,15 @@ void print_number(int n)
 		}
 
 		i = n / (int) pow(10, 1);
-		if ( i > 0 || c != 0)
+		if (i > 0 || c != 0)
 		{
 			_putchar(i + '0');
 			n = n % (int) pow(10, 1);
 			c = 1;
-	
+		}
+
 		i = n / (int) pow(10, 0);
-		if ( i > 0 || c != 0)
+		if (i > 0 || c != 0)
 		{
 			_putchar(i + '0');
 			n = n % (int) pow(10, 0);
