@@ -94,6 +94,15 @@ void print_number(int n)
 			_putchar(i + '0');
 			n = n % (int) pow(10, 1);
 			c = 1;
+	
+		i = n / (int) pow(10, 0);
+		if ( i > 0 || c != 0)
+		{
+			_putchar(i + '0');
+			n = n % (int) pow(10, 0);
+			c = 1;
 		}
+
+	}
 	}
 }
