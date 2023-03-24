@@ -1,6 +1,35 @@
 #include "main.h"
 #include <math.h>
 
+unsigned int i, d, ch;
+
+
+/**
+ * remaining - return the remaining
+ * @p: power
+ * @c: check
+ *
+ * Return: remaining
+ */
+void remaining(int p, int c)
+{
+	int j, po;
+
+	po = 1;
+	for (j = 1; j <= p ; j++)
+		po = po * 10;
+
+	d = i / po;
+	if (d > 0 || c != 0)
+	{
+		_putchar(d + '0');
+		i = i % po;
+		ch = 1;
+	}
+}
+
+
+
 /**
  * print_number - print an integer
  * @n: the integer
@@ -10,8 +39,6 @@
 void print_number(int n)
 {
 	/* 2,147,483,647*/
-	int i, c;
-
 	if (n == 0)
 		_putchar('0');
 	else if (n < 0)
@@ -22,87 +49,18 @@ void print_number(int n)
 
 	if (n > 0)
 	{
-		c = 0;
+		ch = 0;
+		i = n;
 
-		i = n / (int) pow(10, 9);
-		if (i > 0 || c != 0)
-		{
-			_putchar(i + '0');
-			n = n % (int) pow(10, 9);
-			c = 1;
-		}
-
-		i = n / (int) pow(10, 8);
-		if (i > 0 || c != 0)
-		{
-			_putchar(i + '0');
-			n = n % (int) pow(10, 8);
-			c = 1;
-		}
-
-		i = n / (int) pow(10, 7);
-		if (i > 0 || c != 0)
-		{
-			_putchar(i + '0');
-			n = n % (int) pow(10, 7);
-			c = 1;
-		}
-
-		i = n / (int) pow(10, 6);
-		if (i > 0 || c != 0)
-		{
-			_putchar(i + '0');
-			n = n % (int) pow(10, 6);
-			c = 1;
-		}
-
-		i = n / (int) pow(10, 5);
-		if (i > 0 || c != 0)
-		{
-			_putchar(i + '0');
-			n = n % (int) pow(10, 5);
-			c = 1;
-		}
-
-		i = n / (int) pow(10, 4);
-		if (i > 0 || c != 0)
-		{
-			_putchar(i + '0');
-			n = n % (int) pow(10, 4);
-			c = 1;
-		}
-
-		i = n / (int) pow(10, 3);
-		if (i > 0 || c != 0)
-		{
-			_putchar(i + '0');
-			n = n % (int) pow(10, 3);
-			c = 1;
-		}
-
-		i = n / (int) pow(10, 2);
-		if (i > 0 || c != 0)
-		{
-			_putchar(i + '0');
-			n = n % (int) pow(10, 2);
-			c = 1;
-		}
-
-		i = n / (int) pow(10, 1);
-		if (i > 0 || c != 0)
-		{
-			_putchar(i + '0');
-			n = n % (int) pow(10, 1);
-			c = 1;
-		}
-
-		i = n / (int) pow(10, 0);
-		if (i > 0 || c != 0)
-		{
-			_putchar(i + '0');
-			n = n % (int) pow(10, 0);
-			c = 1;
-		}
-
+		remaining(9, ch);
+		remaining(8, ch);
+		remaining(7, ch);
+		remaining(6, ch);
+		remaining(5, ch);
+		remaining(4, ch);
+		remaining(3, ch);
+		remaining(2, ch);
+		remaining(1, ch);
+		remaining(0, ch);
 	}
 }
