@@ -29,7 +29,7 @@ int _atoi(char *s)
 	if (num == 1)
 	{
 		if (m % 2 ==0)
-			retrunt (n);
+			return (n);
 		else
 			return (n * -1);
 	}
