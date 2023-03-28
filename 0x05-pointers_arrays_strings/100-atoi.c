@@ -7,33 +7,31 @@
  */
 int _atoi(char *s)
 {
-	int i, j, start, end, m, n;
-	char *num;
+	int i, m, n, num;
 
 	i = 0;
 	m = 0;
-	while (!(s[i] >= 48 && s[i] <= 57))
+	while (!(s[i] >= 48 && s[i] <= 57) && s[i] != '\0')
 	{
 		if (s[i] == '-')
 			m++;
 		i++;
 	}
 
-	start = i;
-	j = 0;
-	while (s[i] >= 48 && s[i] <= 57)
+	n = 0;
+	while ((s[i] >= 48 && s[i] <= 57) && s[i] != '\0')
 	{
-		n = 1;
-		num[j] = s[i];
-		j++;
+		n = (n * 10) + (s[i] - '0');
+		num = 1;
 		i++;
 	}
 
-	end = i - 1;
-	if (n == 1)
+	if (num == 1)
 	{
-		n = (int) *num;
-		return (n);
+		if (m % 2 ==0)
+			retrunt (n);
+		else
+			return (n * -1);
 	}
 
 	else
