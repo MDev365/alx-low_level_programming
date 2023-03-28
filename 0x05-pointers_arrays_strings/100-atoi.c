@@ -7,7 +7,8 @@
  */
 int _atoi(char *s)
 {
-	int i, m, n, num;
+	int i, m, num;
+	unsigned int n;
 
 	i = 0;
 	m = 0;
@@ -28,7 +29,7 @@ int _atoi(char *s)
 
 	if (num == 1)
 	{
-		if (m % 2 ==0)
+		if (m % 2 == 0)
 			return (n);
 		else
 			return (n * -1);
