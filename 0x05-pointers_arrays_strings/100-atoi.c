@@ -12,7 +12,7 @@ int _atoi(char *s)
 
 	i = 0;
 	m = 0;
-	while !(s[i] >= 48 && s[i] <= 57)
+	while (!(s[i] >= 48 && s[i] <= 57))
 	{
 		if (s[i] == '-')
 			m++;
@@ -32,10 +32,10 @@ int _atoi(char *s)
 	end = i - 1;
 	if (n == 1)
 	{
-		n = (int) num;
+		n = (int) *num;
 		return (n);
 	}
 
 	else
-		return (0)
+		return (0);
 }
