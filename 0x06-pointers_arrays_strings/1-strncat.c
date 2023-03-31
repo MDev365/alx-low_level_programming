@@ -6,12 +6,12 @@
  * @src: src string
  * @n: n bytes
  *
- * Retrurn: string
+ * Return: string
  */
 char *_strncat(char *dest, char *src, int n)
 {
 	int i, j;
-	
+
 	i = 0;
 	j = 0;
 	while (dest[i] != '\0')
@@ -24,11 +24,8 @@ char *_strncat(char *dest, char *src, int n)
 		j++;
 	}
 
-	while (j < n)
-	{
+	if (j < n)
 		dest[i] = '\0';
-		i++;
-		j++;
-	}
+
 	return (dest);
 }
