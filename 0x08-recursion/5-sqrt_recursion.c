@@ -14,7 +14,7 @@ double sqrt_guess(double num, double guess)
 
 	if (new_guess == guess)
 		return (guess);
-	return (sqrt(num, new_guess));
+	return (sqrt_guess(num, new_guess));
 }
 
 
