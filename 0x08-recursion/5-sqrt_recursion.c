@@ -1,6 +1,24 @@
 #include "main.h"
 
 /**
+ * sqrt_guess - trying to fine squr using Babylonian method
+ * @num: the number
+ * @guess: the guess
+ *
+ * Return: double
+ */
+
+double sqrt_guess(double num, double guess)
+{
+	double new_guess = (guess + num / guess) / 2;
+
+	if (new_guess == guess)
+		return (guess);
+	return (sqrt(num, new_guess));
+}
+
+
+/**
  * _sqrt_recursion - returns the natural square root of a number.
  * @n: the number
  *
@@ -8,7 +26,9 @@
  */
 int _sqrt_recursion(int n)
 {
-	if (n == -1 || n < 0)
+	double result;
+
+	if (n < 0)
 	{
 		return (-1);
 	}
@@ -22,11 +42,11 @@ int _sqrt_recursion(int n)
 	}
 	else
 	{
-		if (n / n < 0)
+		result = sqrt_guess(n, 1.0);
+
+		if (result != (int)result)
 			return (-1);
-		else if (n / n == 1)
-			return (1);
 		else
-			return (1 + _sqrt_recursion(n / n));
+			return ((int)result);
 	}
 }
