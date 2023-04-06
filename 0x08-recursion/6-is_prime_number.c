@@ -15,7 +15,7 @@ int check_factor(int n, int f)
 	else if (n % f == 0)
 		return (0);
 	else
-		return checkfactor(n, f - 1);
+		return check_factor(n, f - 1);
 }
 
 
@@ -27,8 +27,6 @@ int check_factor(int n, int f)
  */
 int is_prime_number(int n)
 {
-	int i;
-
 	if (n <= 1)
 		return (0);
 	else
