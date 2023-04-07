@@ -55,6 +55,6 @@ int _wildcmp(char *s1, char *s2, int n)
  */
 int wildcmp(char *s1, char *s2)
 {
-	return (_wildcmp(s1, s2));
+	return (_wildcmp(s1, s2, 0));
 }
 
