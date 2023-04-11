@@ -31,6 +31,7 @@ int _isnumber(char *s)
 	while (s[i] != '\0')
 	{
 		c = c * _isdigit(s[i]);
+		i++;
 	}
 
 	return (c);
@@ -46,7 +47,7 @@ int _isnumber(char *s)
  */
 int main(int argc, char *argv[])
 {
-	if (argc == 0)
+	if (argc != 3)
 	{
 		printf("0\n");
 		return (1);
@@ -55,7 +56,7 @@ int main(int argc, char *argv[])
 	{
 		if (_isnumber(argv[1]) || _isnumber(argv[2]))
 		{
-			printf("%i\n", (atoi(argv[1])) * (atoi(argv[2])));
+			printf("%i\n", (atoi(argv[1])) + (atoi(argv[2])));
 			return (0);
 		}
 		else
