@@ -14,10 +14,11 @@ int main(int argc, char *argv[])
 	if (argc < 2)
 	{
 		printf("Error\n");
+		return (1);
 	}
 	else
 	{
-		printf("%i\n", (atoi(argv[0])) * (atoi(argv[1])));
+		printf("%i\n", (atoi(argv[1])) * (atoi(argv[1])));
+		return (0);
 	}
-	return (0);
 }
