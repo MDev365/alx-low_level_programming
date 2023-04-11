@@ -52,12 +52,12 @@ int main(int argc, char *argv[])
 	sum = 0;
 	for (i = 1 ; i < argc ; i++)
 	{
-		if (!(_isnumber[argv[i]))
+		if (!(_isnumber(argv[i])))
 		{
 			printf("Error\n");
 			return (1);
 		}
-		sum = sum + argv[i];
+		sum = sum + atoi(argv[i]);
 	}
 
 	printf("%i\n", sum);
