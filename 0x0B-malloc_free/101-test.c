@@ -95,7 +95,7 @@ char **strtow(char *str)
 		w_array[w][j] = '\0';
 		w++;
 
-		if (s[i] == '\0')
+		if (str[i] == '\0')
 			break;
 	}
 	return (w_array);
