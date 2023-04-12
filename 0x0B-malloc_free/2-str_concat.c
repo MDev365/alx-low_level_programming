@@ -14,7 +14,8 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i, j, size1, size2;
 	char *dup_str;
 
-	size = 0;
+	size1 = 0;
+	size2 = 0;
 
 	if (s1 != NULL)
 	{
