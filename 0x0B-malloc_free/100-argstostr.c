@@ -49,5 +49,3 @@ char *argstostr(int ac, char **av)
   astr[k] = '\0';
   return (astr);
 }
-      
-      
