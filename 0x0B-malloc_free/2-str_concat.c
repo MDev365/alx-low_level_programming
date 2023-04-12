@@ -16,7 +16,6 @@ char *str_concat(char *s1, char *s2)
 
 	size1 = 0;
 	size2 = 0;
-
 	if (s1 != NULL)
 	{
 		for (i = 0; s1[i] != '\0' ; i++)
@@ -28,28 +27,28 @@ char *str_concat(char *s1, char *s2)
 			size2++;
 		size2++;
 	}
-
 	dup_str = malloc((size1 + size2) * sizeof(char));
-
 	if (dup_str == NULL)
 	{
 		return (NULL);
 	}
-
 	j = 0;
-	for (i = 0 ; s1[i] != '\0' ; i++)
+	if (s1 != NULL)
 	{
-		dup_str[j] = s1[i];
-		j++;
+		for (i = 0 ; s1[i] != '\0' ; i++)
+		{
+			dup_str[j] = s1[i];
+			j++;
+		}
 	}
-
-	for (i = 0 ; s2[i] != '\0' ; i++)
+	if (s2 != NULL)
 	{
-		dup_str[j] = s2[i];
-		j++;
+		for (i = 0 ; s2[i] != '\0' ; i++)
+		{
+			dup_str[j] = s2[i];
+			j++;
+		}
 	}
-
 	dup_str[j] = '\0';
-
 	return (dup_str);
 }
