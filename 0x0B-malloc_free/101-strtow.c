@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * words_count - return the number of words in string
@@ -86,13 +87,17 @@ char **strtow(char *str)
 		w_array[w] = malloc(sizeof(char) * (w_length + 1));
 		if (w_array[w] == NULL)
 			return (NULL);
+		
+		printf("word %i :",w);
 
 		for (j = 0 ; j < w_length ; j++)
 		{
 			w_array[w][j] = str[i + j];
+			printf("%c", w_array[w][j]);
 			i++;
 		}
 		w_array[w][j] = '\0';
+		printf("\n");
 		w++;
 
 		if (str[i] == '\0')
