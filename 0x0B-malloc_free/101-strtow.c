@@ -92,7 +92,7 @@ char **strtow(char *str)
 
 		for (j = 0 ; j < w_length ; j++)
 		{
-			w_array[w][j] = str[i + j];
+			w_array[w][j] = str[i];
 			printf("%c", w_array[w][j]);
 			i++;
 		}
