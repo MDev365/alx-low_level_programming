@@ -87,8 +87,6 @@ char **strtow(char *str)
 		w_array[w] = malloc(sizeof(char) * (w_length + 1));
 		if (w_array[w] == NULL)
 			return (NULL);
-		
-		printf("word %i :",w);
 
 		for (j = 0 ; j < w_length ; j++)
 		{
