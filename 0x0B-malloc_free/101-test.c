@@ -6,26 +6,25 @@
  *
  * Return: (int) number of words, otherwise 0
  */
- int words_count(char *s)
- {
-	 int wcount, i, j;
-	 
-	 if (s == NULL)
-		 return (NULL);
-	 
-	 for (i = 0; s[i] != '\0' ; i++)
-	 {
-		 if (s[i] == ' ')
-			 continue;
-		 for (j = 0 ; s[i] != ' ' && s[i] != '\0' ; j++)
-		 {
-			 i++;
-		 }
-		 if (j != 0)
-			 wcount++;
-		 if (s[i] == '\0')
-			 break;
-	 }
-	 return (wcount);
- }
-		 
+int words_count(char *s)
+{
+	int wcount, i, j;
+	
+	if (s == NULL)
+		return (NULL);
+	
+	for (i = 0; s[i] != '\0' ; i++)
+	{
+		if (s[i] == ' ')
+			continue;
+		for (j = 0 ; s[i] != ' ' && s[i] != '\0' ; j++)
+		{
+			i++;
+		}
+		if (j != 0)
+			wcount++;
+		if (s[i] == '\0')
+			break;
+	}
+	return (wcount);
+}
