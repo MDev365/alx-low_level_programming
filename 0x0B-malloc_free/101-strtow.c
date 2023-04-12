@@ -71,7 +71,7 @@ char **strtow(char *str)
 	if (w_num == 0)
 		return (NULL);
 
-	w_array = malloc(sizeof(char *) * w_num);
+	w_array = malloc(sizeof(char *) * (w_num + 1));
 	if (w_array == NULL)
 		return (NULL);
 	w = 0;
@@ -93,15 +93,14 @@ char **strtow(char *str)
 		for (j = 0 ; j < w_length ; j++)
 		{
 			w_array[w][j] = str[i];
-			printf("%c", w_array[w][j]);
 			i++;
 		}
 		w_array[w][j] = '\0';
-		printf("\n");
 		w++;
 
 		if (str[i] == '\0')
 			break;
 	}
+	w_array[w] = NULL;
 	return (w_array);
 }
