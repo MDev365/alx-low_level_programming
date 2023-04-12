@@ -10,42 +10,41 @@
  */
 char *argstostr(int ac, char **av)
 {
-  char *astr;
-  int i, j, str_size, k;
-  
-  if (ac == 0 || av == NULL)
-  {
-    return (NULL);
-  }
-  
-  str_size = 0;
-  for (i = 0; i < ac ; i++)
-  {
-    for (j = 0; av[i][j] != '\0'; j++)
-    {
-      str_size++;
-    }
-    str_size++;
-  }
-  
-  astr = malloc(sizeof(char) * str_size + 1);
-  
-  if (astr == NULL)
-  {
-    return (NULL);
-  }
-  
-  k = 0;
-  for (i = 0; i < ac ; i++)
-  {
-    for (j = 0; av[i][j] != '\0' ; j++)
-    {
-      astr[k] = av[i][j];
-      k++;
-    }
-    astr[k] = '\n';
-    k++;
-  }
-  astr[k] = '\0';
-  return (astr);
+	char *astr;
+	int i, j, str_size, k;
+
+	if (ac == 0 || av == NULL)
+	{
+		return (NULL);
+	}
+
+	str_size = 0;
+	for (i = 0; i < ac ; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			str_size++;
+		}
+		str_size++;
+	}
+	astr = malloc(sizeof(char) * str_size + 1);
+
+	if (astr == NULL)
+	{
+		return (NULL);
+	}
+
+	k = 0;
+	for (i = 0; i < ac ; i++)
+	{
+		for (j = 0; av[i][j] != '\0' ; j++)
+		{
+			astr[k] = av[i][j];
+			k++;
+		}
+		astr[k] = '\n';
+		k++;
+	}
+	astr[k] = '\0';
+	return (astr);
 }
