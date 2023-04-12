@@ -79,15 +79,15 @@ char **strtow(char *str)
 		if (str[i] == ' ')
 			continue;
 
-		w_length = word_length(&s[i]);
-		if (w_lenth <= 0)
+		w_length = word_length(&str[i]);
+		if (w_length <= 0)
 			continue;
 
-		w_array[w] = malloc(sizeof(char) * (w_lenth + 1));
+		w_array[w] = malloc(sizeof(char) * (w_length + 1));
 		if (w_array[w] == NULL)
 			return (NULL);
 
-		for (j = 0 ; j < w_lenth ; j++)
+		for (j = 0 ; j < w_length ; j++)
 		{
 			w_array[w][j] = str[i + j];
 			i++;
