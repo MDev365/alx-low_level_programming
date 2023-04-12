@@ -17,8 +17,9 @@
 	 {
 		 if (s[i] == ' ')
 			 continue;
-		 for (j = 0 ; s[i] != ' ' || s[i] != '\0' ; j++)
+		 for (j = 0 ; s[i] != ' ' && s[i] != '\0' ; j++)
 		 {
+			 i++;
 		 }
 		 if (j != 0)
 			 wcount++;
