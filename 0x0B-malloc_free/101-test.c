@@ -28,3 +28,27 @@ int words_count(char *s)
 	}
 	return (wcount);
 }
+
+
+
+/**
+ * word_length - get the start of word and return the end of it
+ * @s: pointer to start of the word
+ *
+ * Return: (int) length of the word, otherwise 0
+ */
+int word_length(char *s)
+{
+	int count, i;
+	
+	if (s == NULL)
+		return (0);
+	
+	count = 0;
+	for (i = 0; s[i] != ' ' && s[i] != '\0' ; i++)
+	{
+		count++;
+	}
+	return (count);
+}
+
