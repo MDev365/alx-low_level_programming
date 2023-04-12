@@ -52,3 +52,51 @@ int word_length(char *s)
 	return (count);
 }
 
+/**
+ * strtow - splits a string into words.
+ * @str: string
+ *
+ * Return: array of words
+ */
+char **strtow(char *str)
+{
+	char **w_array;
+	int w_num, i, w_lenth, w;
+
+	if (str == NULL || str[0] = '\0')
+		return (NULL);
+
+	w_num  = words_count(str);
+	if (w_num == 0)
+		return (NULL);
+
+	w_array = malloc(sizeof(char *) * w_num);
+	if (w_array == NULL)
+		return (NULL);
+	w = 0;
+	for (i = 0; str[i] != '\0' ; i++)
+	{
+		if (str[i] == ' ')
+			continue;
+
+		w_length = word_length(&s[i]);
+		if (w_lenth <= 0)
+			continue;
+
+		w_array[w] = malloc(sizeof(char) * (w_lenth + 1));
+		if (w_array[w] == NULL)
+			return (NULL);
+
+		for (j = 0 ; j < w_lenth ; j++)
+		{
+			w_array[w][j] = str[i + j];
+			i++;
+		}
+		w_array[w][j] = '\0';
+		w++;
+
+		if (s[i] == '\0')
+			break;
+	}
+	return (w_array);
+}
