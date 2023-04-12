@@ -19,12 +19,12 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 != NULL)
 	{
-		for (i = 0; s1 != '\0' ; i++)
+		for (i = 0; s1[i] != '\0' ; i++)
 			size1++;
 	}
 	if (s2 != NULL)
 	{
-		for (i = 0; s2 != '\0' ; i++)
+		for (i = 0; s2[i] != '\0' ; i++)
 			size2++;
 		size2++;
 	}
@@ -37,13 +37,13 @@ char *str_concat(char *s1, char *s2)
 	}
 
 	j = 0;
-	for (i = 0 ; s1 != '\0' ; i++)
+	for (i = 0 ; s1[i] != '\0' ; i++)
 	{
 		dup_str[j] = s1[i];
 		j++;
 	}
 
-	for (i = 0 ; s2 != '\0' ; i++)
+	for (i = 0 ; s2[i] != '\0' ; i++)
 	{
 		dup_str[j] = s2[i];
 		j++;
