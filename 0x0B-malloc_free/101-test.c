@@ -9,10 +9,10 @@
 int words_count(char *s)
 {
 	int wcount, i, j;
-	
+
 	if (s == NULL)
 		return (NULL);
-	
+
 	for (i = 0; s[i] != '\0' ; i++)
 	{
 		if (s[i] == ' ')
