@@ -61,7 +61,7 @@ int word_length(char *s)
 char **strtow(char *str)
 {
 	char **w_array;
-	int w_num, i, w_lenth, w;
+	int w_num, i, j, w_length, w;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
