@@ -40,10 +40,10 @@ int words_count(char *s)
 int word_length(char *s)
 {
 	int count, i;
-	
+
 	if (s == NULL)
 		return (0);
-	
+
 	count = 0;
 	for (i = 0; s[i] != ' ' && s[i] != '\0' ; i++)
 	{
@@ -63,7 +63,7 @@ char **strtow(char *str)
 	char **w_array;
 	int w_num, i, w_lenth, w;
 
-	if (str == NULL || str[0] = '\0')
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
 
 	w_num  = words_count(str);
