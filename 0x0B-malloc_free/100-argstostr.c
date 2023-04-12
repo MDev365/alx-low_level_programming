@@ -21,7 +21,7 @@ char *argstostr(int ac, char **av)
   str_size = 0;
   for (i = 1; i < ac ; i++)
   {
-    for (j = 0; av[ac] != '\0'; j++)
+    for (j = 0; av[i][j] != '\0'; j++)
     {
       str_size++;
     }
@@ -38,7 +38,7 @@ char *argstostr(int ac, char **av)
   k = 0;
   for (i = 0; i < ac ; i++)
   {
-    for (j = 0; av[i][j] != '\o' ; j++)
+    for (j = 0; av[i][j] != '\0' ; j++)
     {
       astr[k] = av[i][j];
       k++;
