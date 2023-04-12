@@ -11,7 +11,7 @@ int words_count(char *s)
 	int wcount, i, j;
 
 	if (s == NULL)
-		return (NULL);
+		return (0);
 
 	for (i = 0; s[i] != '\0' ; i++)
 	{
