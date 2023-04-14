@@ -20,7 +20,7 @@ unsigned int _strlen(char *s)
 	if (i <= 0)
 		return (0);
 	else
-		return (i - 1);
+		return (i);
 }
 
 
@@ -42,7 +42,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	s1_len = _strlen(s1);
 	s2_len = _strlen(s2);
 
-	if (n > s2_len)
+	if (n > s2_len || n > s2_len)
 		n = s2_len;
 
 	sc = malloc(sizeof(char) * (s1_len + n + 1));
