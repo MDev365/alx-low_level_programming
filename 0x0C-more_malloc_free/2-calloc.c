@@ -3,7 +3,7 @@
 
 void fill_memory(char *s, unsigned int size)
 {
-	int i;
+	unsigned int i;
 	
 	for (i = 0; i < size ; i++)
 	{
