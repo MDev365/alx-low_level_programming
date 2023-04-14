@@ -4,7 +4,7 @@
 void fill_memory(char *s, unsigned int size)
 {
 	unsigned int i;
-	
+
 	for (i = 0; i < size ; i++)
 	{
 		s[i] = 0;
@@ -27,7 +27,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	m = malloc(nmemb * size);
-	
+
 	if (m == NULL)
 		return (NULL);
 
