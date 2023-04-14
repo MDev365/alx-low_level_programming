@@ -22,7 +22,6 @@ void fill_memory(char *s, unsigned int size)
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void **m;
-	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
