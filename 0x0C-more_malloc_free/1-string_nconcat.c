@@ -10,7 +10,7 @@ int _strlen(char *s)
 {
 	int i;
 	
-	if (s == NULL || s[0] = '\0')
+	if (s == NULL || s[0] == '\0')
 		return (0);
 	
 	for (i = 0 ; s[i] != '\0' ; i++)
@@ -51,13 +51,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 	j = 0;
-	for (i == 0; i < s1_len ; i++)
+	for (i = 0; i < s1_len ; i++)
 	{
 		sc[j] = s1[i];
 		j++;
 	}
 
-	for (i == 0; i < n ; i++)
+	for (i = 0; i < n ; i++)
 	{
 		sc[j] = s2[i];
 		j++;
