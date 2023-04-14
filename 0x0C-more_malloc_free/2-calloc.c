@@ -1,5 +1,12 @@
 #include <stdlib.h>
 
+/**
+ * fill_memory - fill memory with 0
+ * @s: memory
+ * @size: size
+ *
+ * Return: void
+ */
 
 void fill_memory(char *s, unsigned int size)
 {
