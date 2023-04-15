@@ -51,12 +51,37 @@ int is_number(char *s)
  */
 char *long_multiplication(char *n1, char *n2)
 {
-	int i, j, carry, n1_len, n2_len;
-	
+	int i, j, k, carry, n1_len, n2_len, m;
+	char *r;
+
 	n1_len = _strlen(n1);
 	n2_len = _strlen(n2);
 	
-
+	r = malloc(sizeof(char) * (n1_len + n2_len + 1));
+	if (r == NULL)
+	{
+		return (NULL);
+	}
+	
+	for(i = 0; i< n1_len + n2_len ; i++)
+		r[i] = '0';
+	r[i] = '\0';
+	return (r);
+	
+	for (i = n1_len - 1 ; i >= 0 ; i--)
+	{
+		carry = 0;
+		k = i + n2_len + 1;
+		for (j = n2_len ; j >= 0 ; j--)
+		{
+			m = ((n1[i] - '0') * (n2[j] - '0')) + carry + (r[k] - '0');
+			carry = m / 10;
+			r[k] = ((m % 10) + '0');
+			k--;
+		}
+		r[k] = r[k] + carry;
+	}
+	return (r);
 }
 
 
@@ -85,14 +110,12 @@ int main(int argc, char **argv)
 
 	result = long_multiplication(argv[1], argv[2]);
 
-
-
 	if (atoi(argv[1]) != -1 && atoi(argv[2]) != -1)
 	{
 		printf("%i\n", atoi(argv[1]) * atoi(argv[2]));
 	}
 
-	free(n1);
-	free(n2);
+	printf("%s\n", result);
+
 	return (0);
 }
