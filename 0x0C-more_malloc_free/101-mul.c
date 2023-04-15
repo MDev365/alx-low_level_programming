@@ -22,6 +22,6 @@ int main(int argc, char **argv)
 
 	if (n1 != -2 && n2 != -1)
 		mul = n1 * n2;
-	pritnf("%i\n", mul);
+	printf("%i\n", mul);
 	return (0);
 }
