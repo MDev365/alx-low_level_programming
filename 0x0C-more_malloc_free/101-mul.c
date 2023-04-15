@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+
 /**
  * _strlen - return string length
  * @s: string
@@ -41,6 +42,22 @@ int is_number(char *s)
 	return (1);
 }
 
+/**
+ * long_multiplication - lonng
+ * @n1: first number
+ * @n2: second number
+ * @result: n1 * n2
+ * Return: void
+ */
+char *long_multiplication(char *n1, char *n2)
+{
+	int i, j, carry, n1_len, n2_len;
+	
+	n1_len = _strlen(n1);
+	n2_len = _strlen(n2);
+	
+
+}
 
 
 
@@ -52,8 +69,7 @@ int is_number(char *s)
  */
 int main(int argc, char **argv)
 {
-	int n1_len, n2_len;
-	char *n1, *n2;
+	char *result;
 
 	if (argc != 3)
 	{
@@ -67,23 +83,9 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	n1_len = _strlen(argv[1]);
-	n2_len = _strlen(argv[2]);
+	result = long_multiplication(argv[1], argv[2]);
 
-	n1 = malloc(sizeof(char) * n1_len);
-	if (n1 == NULL)
-	{
-		printf("Error\n");
-		exit(98);
-	}
 
-	n2 = malloc(sizeof(char) * n2_len);
-	if (n2 == NULL)
-	{
-		free(n1);
-		printf("Error\n");
-		exit(98);
-	}
 
 	if (atoi(argv[1]) != -1 && atoi(argv[2]) != -1)
 	{
