@@ -1,6 +1,27 @@
 #include <stdlib.h>
 
 /**
+ * copy_memory - copy the content of src to dest
+ * @src: source memory
+ * @dest: destination memory
+ * @size: size
+ *
+ * Return: void
+ */
+
+void copy_memory(char *src, char *dest, unsigned int size)
+{
+	unsigned int i;
+
+	for (i = 0; i < size ; i++)
+	{
+		dest[i] = src[i];
+	}
+}
+
+
+
+/**
  * _realloc -  reallocates a memory block using malloc and free
  * @ptr: pointer to the memory previously allocated
  * @old_size: the size, in bytes, of the allocated space for ptr
@@ -39,10 +60,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (mem == NULL)
 		return (NULL);
 
-	for (i = 0 ; i < cp_size ; i++)
-	{
-		mem[i] = ptr[i];
-	}
+	copy_memory(ptr, mem, cp_size);
+
 	free(ptr);
 	return (mem);
 }
