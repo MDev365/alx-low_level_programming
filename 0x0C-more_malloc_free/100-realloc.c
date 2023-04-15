@@ -39,7 +39,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (mem == NULL)
 		return (NULL);
 
-	for (i = 0 ; i < size ; i++)
+	for (i = 0 ; i < cp_size ; i++)
 	{
 		mem[i] = ptr[i];
 	}
