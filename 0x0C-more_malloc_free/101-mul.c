@@ -89,5 +89,8 @@ int main(int argc, char **argv)
 	{
 		printf("%i\n", atoi(argv[1]) * atoi(argv[2]));
 	}
+
+	free(n1);
+	free(n2);
 	return (0);
 }
