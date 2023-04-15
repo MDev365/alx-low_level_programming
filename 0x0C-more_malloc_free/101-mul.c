@@ -67,11 +67,12 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	n1_len = _strlen(avg[1]);
-	n2_len = _strlen(avg[2]);
+	n1_len = _strlen(argv[1]);
+	n2_len = _strlen(argv[2]);
 
 	n1 = malloc(sizeof(char) * n1_len);
-	if (n1 == NULL){
+	if (n1 == NULL)
+	{
 		printf("Error\n");
 		exit(98);
 	}
