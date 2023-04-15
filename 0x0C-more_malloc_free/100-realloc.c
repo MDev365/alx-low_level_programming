@@ -31,7 +31,7 @@ void copy_memory(char *src, char *dest, unsigned int size)
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *mem;
-	int i, j, cp_size;
+	int cp_size;
 
 	if (ptr == NULL)
 	{
