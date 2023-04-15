@@ -46,7 +46,7 @@ int is_number(char *s)
  * long_multiplication - lonng
  * @n1: first number
  * @n2: second number
- * @result: n1 * n2
+ *
  * Return: void
  */
 char *long_multiplication(char *n1, char *n2)
@@ -56,17 +56,17 @@ char *long_multiplication(char *n1, char *n2)
 
 	n1_len = _strlen(n1);
 	n2_len = _strlen(n2);
-	
+
 	r = malloc(sizeof(char) * (n1_len + n2_len + 1));
 	if (r == NULL)
 	{
 		return (NULL);
 	}
-	
-	for(i = 0; i< n1_len + n2_len ; i++)
+
+	for (i = 0; i < n1_len + n2_len ; i++)
 		r[i] = '0';
 	r[i] = '\0';
-	
+
 	for (i = n1_len - 1 ; i >= 0 ; i--)
 	{
 		carry = 0;
@@ -84,7 +84,7 @@ char *long_multiplication(char *n1, char *n2)
 	{
 		for (i = 0; i < n1_len + n2_len ; i++)
 		{
-			r[i] = r[i+1];
+			r[i] = r[i + 1];
 		}
 	}
 	return (r);
