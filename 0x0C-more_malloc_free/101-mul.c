@@ -66,13 +66,12 @@ char *long_multiplication(char *n1, char *n2)
 	for(i = 0; i< n1_len + n2_len ; i++)
 		r[i] = '0';
 	r[i] = '\0';
-	return (r);
 	
 	for (i = n1_len - 1 ; i >= 0 ; i--)
 	{
 		carry = 0;
-		k = i + n2_len + 1;
-		for (j = n2_len ; j >= 0 ; j--)
+		k = i + n2_len;
+		for (j = n2_len - 1 ; j >= 0 ; j--)
 		{
 			m = ((n1[i] - '0') * (n2[j] - '0')) + carry + (r[k] - '0');
 			carry = m / 10;
