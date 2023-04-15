@@ -60,6 +60,13 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
+	
+	if (is_number(argv[1]) == 0 || is_number(argv[2]) == 0)
+		{
+		printf("Error\n");
+		exit(98);
+	}
+
 	n1 = atoi(argv[1]);
 	n2 = atoi(argv[2]);
 
