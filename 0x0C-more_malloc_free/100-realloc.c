@@ -32,7 +32,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *mem;
 	int i, j, cp_size;
-	
+
 	if (ptr == NULL)
 	{
 		mem = malloc(new_size);
