@@ -24,7 +24,7 @@ unsigned int _strlen(char *s)
 		return (i);
 }
 
-/*
+/**
  * is_number - check if string is number
  * @s: string
  * Return: 1 if number and 0 if not
