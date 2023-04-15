@@ -80,6 +80,13 @@ char *long_multiplication(char *n1, char *n2)
 		}
 		r[k] = r[k] + carry;
 	}
+	if (r[0] == '0')
+	{
+		for (i = 0; i < n1_len + n2_len ; i++)
+		{
+			r[i] = r[i+1];
+		}
+	}
 	return (r);
 }
 
