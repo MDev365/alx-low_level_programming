@@ -24,7 +24,7 @@ unsigned int _strlen(char *s)
 		return (i);
 }
 
-/**
+/*
  * is_number - check if string is number
  * @s: string
  * Return: 1 if number and 0 if not
@@ -52,8 +52,8 @@ int is_number(char *s)
  */
 int main(int argc, char **argv)
 {
-	int n1_len, n2_len;
-	char *n1, *n2;
+	int mul;
+	int n1, n2;
 
 	if (argc != 3)
 	{
@@ -67,23 +67,11 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	n1_len = _strlen(argv[1]);
-	n2_len = _strlen(argv[2]);
+	n1 = atoi(argv[1]);
+	n2 = atoi(argv[2]);
 
-	n1 = malloc(sizeof(char) * n1_len);
-	if (n1 == NULL)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-
-	n2 = malloc(sizeof(char) * n2_len);
-	if (n2 == NULL)
-	{
-		free(n1);
-		printf("Error\n");
-		exit(98);
-	}
-
+	if (n1 != -2 && n2 != -1)
+		mul = n1 * n2;
+	printf("%i\n", mul);
 	return (0);
 }
