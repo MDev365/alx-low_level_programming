@@ -2,8 +2,10 @@
 #include <stdio.h>
 
 /**
- *
- *
+ * main - mul
+ * @argc: argc
+ * @argv: argv
+ * Return: int
  */
 int main(int argc, char **argv)
 {
