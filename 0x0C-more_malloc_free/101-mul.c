@@ -52,7 +52,7 @@ int is_number(char *s)
  */
 int main(int argc, char **argv)
 {
-	int mul, n1_len, n2_len;
+	int n1_len, n2_len;
 	char *n1, *n2;
 
 	if (argc != 3)
@@ -66,26 +66,23 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	
+
 	n1_len = _strlen(avg[1]);
 	n2_len = _strlen(avg[2]);
 
 	n1 = malloc(sizeof(char) * n1_len);
-	if (n1 == NULL)
-		return (NULL);
+	if (n1 == NULL){
+		printf("Error\n");
+		exit(98);
+	}
 
 	n2 = malloc(sizeof(char) * n2_len);
 	if (n2 == NULL)
 	{
 		free(n1);
-		return(NULL);
+		printf("Error\n");
+		exit(98);
 	}
 
-	/* n1 = atoi(argv[1]);
-	n2 = atoi(argv[2]);
-
-	if (n1 != -2 && n2 != -1)
-		mul = n1 * n2;
-	printf("%i\n", mul);*/
 	return (0);
 }
