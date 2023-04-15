@@ -116,11 +116,6 @@ int main(int argc, char **argv)
 
 	result = long_multiplication(argv[1], argv[2]);
 
-	if (atoi(argv[1]) != -1 && atoi(argv[2]) != -1)
-	{
-		printf("%i\n", atoi(argv[1]) * atoi(argv[2]));
-	}
-
 	printf("%s\n", result);
 
 	return (0);
