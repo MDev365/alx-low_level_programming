@@ -117,6 +117,7 @@ int main(int argc, char **argv)
 	result = long_multiplication(argv[1], argv[2]);
 
 	printf("%s\n", result);
+	free(result);
 
 	return (0);
 }
