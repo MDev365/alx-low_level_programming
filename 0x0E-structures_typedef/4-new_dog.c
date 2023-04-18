@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <string.h>
 /**
  * new_dog - initialize a vatiable of type struct dog_t
  * @name: dog name
@@ -25,7 +26,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if(owner != NULL)
 	{
-		dog_owner = malloc(sizeof(char) * srtlen(owner));
+		dog_owner = malloc(sizeof(char) * strlen(owner));
 		if (dog_owner == NULL)
 			return (NULL);
 		for (i = 0; owner[i] != '\0' ; i++)
