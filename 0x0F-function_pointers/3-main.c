@@ -12,7 +12,7 @@
 int main(int argc, char **argv)
 {
 	int a, b;
-	char op;
+	char *op;
 	int (*f)(int, int);
 
 	if (argc != 4)
@@ -21,9 +21,9 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	op = argv[2][0];
-	if (op != '+' || op != '-' || op != '*' ||
-		op != '/' || op != '%')
+	*op = argv[2][0];
+	if (*op != '+' || *op != '-' || *op != '*' ||
+		*op != '/' || *op != '%')
 	{
 		printf("Error\n");
 		exit(99);
@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 
-	if ((op == '/' || op == '%') && b == 0)
+	if ((*op == '/' || *op == '%') && b == 0)
 	{
 		printf("Error\n");
 		exit(100);
