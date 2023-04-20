@@ -12,6 +12,7 @@ int main(int argc, char **argv)
 {
 	int a, b;
 	char op;
+	int int (*f)(int, int);
 
 	if (argc != 4)
 	{
@@ -35,7 +36,8 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(100);
 	}
-
-	(void) a;
+	
+	f = get_op_func(op);
+	printf("%i", f(a, b));
 	return(0);
 }
