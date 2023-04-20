@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 {
 	int i, n;
 	int (*func)(int, char **);
-	unsigned char *c;
+	char *c;
 
 	if (argc != 2)
 	{
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	}
 
 	func = main;
-	c = (unsigned char *) &func;
+	c = (char *) &func;
 
 	for (i = 0; i < n ; i++)
 	{
