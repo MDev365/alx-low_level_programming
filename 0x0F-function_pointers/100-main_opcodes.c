@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	}
 
 	func = main;
-	c = (char *) &func;
+	c = (char *) &main;
 
 	for (i = 0; i < n ; i++)
 	{
