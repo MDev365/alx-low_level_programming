@@ -15,6 +15,7 @@ int main(int argc, char **argv)
 	char *op;
 	int (*f)(int, int);
 
+	printf("argc = %i", argc);
 	if (argc != 4)
 	{
 		printf("Error\n");
