@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	char *op;
 	int (*f)(int, int);
 
-	printf("argc = %i", argc);
+	printf("argc = %i\n", argc);
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 	}
 
 	op = &argv[2][0];
+	printf("op : %c\n", *op);
 	if (*op != '+' || *op != '-' || *op != '*' ||
 		*op != '/' || *op != '%')
 	{
