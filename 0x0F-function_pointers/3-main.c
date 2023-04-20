@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	op = &argv[2][0];
 	printf("%i\n",argv[2][1]); 
 	if (*op != '+' && *op != '-' && *op != '*' &&
-		*op != '/' && *op != '%' && (!argv[2][1]))
+		*op != '/' && *op != '%' && argv[2][1])
 	{
 		printf("Error\n");
 		exit(99);
