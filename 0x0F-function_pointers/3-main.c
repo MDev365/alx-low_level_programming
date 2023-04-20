@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	*op = argv[2][0];
+	op = &argv[2][0];
 	if (*op != '+' || *op != '-' || *op != '*' ||
 		*op != '/' || *op != '%')
 	{
