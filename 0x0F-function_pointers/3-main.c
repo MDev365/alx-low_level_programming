@@ -15,7 +15,6 @@ int main(int argc, char **argv)
 	char *op;
 	int (*f)(int, int);
 
-	printf("argc = %i\n", argc);
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -23,7 +22,6 @@ int main(int argc, char **argv)
 	}
 
 	op = &argv[2][0];
-	printf("op : %c\n", *op);
 	if (*op != '+' && *op != '-' && *op != '*' &&
 		*op != '/' && *op != '%')
 	{
@@ -41,6 +39,6 @@ int main(int argc, char **argv)
 	}
 	
 	f = get_op_func(op);
-	printf("%i", f(a, b));
+	printf("%i\n", f(a, b));
 	return(0);
 }
