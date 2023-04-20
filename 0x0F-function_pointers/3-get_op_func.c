@@ -19,9 +19,11 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i;
 
-	(void) ops;
-	(void) s;
-	(void) i;
+	i = 0;
+	while (i == 5 || s[0] != ops[i][0])
+	{
+		i++;
+	}
 
-	return (NULL);
+	return (ops[i][1]);
 }
