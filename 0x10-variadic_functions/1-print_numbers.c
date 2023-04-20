@@ -8,21 +8,23 @@
  *
  * Return: void
  */
-int sum_them_all(const unsigned int n, ...)
+void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
 	int sum;
 	va_list args;
 
-	if (n == 0)
-		return (0);
+	if (n == 0 || separator == NULL)
+		return;
 
 	va_start(args, n);
 
 	sum = 0;
 	for (i = 0 ; i < n ; i++)
 	{
-		sum += va_arg(args, int);
+		printf("%i");
+		if (i != n - 1)
+			printf("%s", separator);
 	}
-	return (sum);
+	printf("\n");
 }
