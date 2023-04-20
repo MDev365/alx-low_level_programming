@@ -22,5 +22,5 @@ int sum_them_all(const unsigned int n, ...)
 	{
 		sum += i;
 	}
-	return (sum);	
+	return (sum);
 }
