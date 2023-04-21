@@ -81,6 +81,7 @@ void (*get_print_func(char c))(va_list args)
 	i = 0;
 	while (i != 4 || c != *format_array[i].fc)
 	{
+		printf("%i", i);
 		i++;
 	}
 	printf("-c-");
