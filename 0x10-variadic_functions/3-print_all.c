@@ -12,7 +12,6 @@ void print_all(const char * const format, ...)
 {
 	int i;
 	va_list args;
-	void (*func)(va_list);
 	char *s;
 
 	va_start(args, format);
@@ -31,7 +30,7 @@ void print_all(const char * const format, ...)
 		}
 		else if (format[i] == 'f')
 		{
-			printf("%f", va_arg(args, int));
+			printf("%f", va_arg(args, float));
 		}
 		else if (format[i] == 's')
 		{
@@ -41,11 +40,11 @@ void print_all(const char * const format, ...)
 			else
 				printf("%s", s);
 		}
-		if(format[i + 1] != '\0' && (format[i] == 'c' || format[i] == 'i' ||
-					     format[i] == 'f' || format[i] == 's')
-		   {
-			   printf(", ");
-		   }
+
+		if(format[i + 1] != '\0' && (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's'))
+		{
+			printf(", ");
+		}
 	}
 	va_end(args);
 	printf("\n");
