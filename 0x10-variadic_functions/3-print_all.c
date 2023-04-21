@@ -103,6 +103,7 @@ void print_all(const char * const format, ...)
 	i = 0;
 	while (format[i] != '\0')
 	{
+		printf("%c", format[i]);
 		func = get_print_func(format[i]);
 		if (func != NULL)
 			func(args);
