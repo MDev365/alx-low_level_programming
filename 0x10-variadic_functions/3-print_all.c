@@ -71,10 +71,10 @@ void (*get_print_func(char c))(va_list args)
 {
 	int i;
 	format_st format_array[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"f", print_float},
-		{"s", print_string},
+		{"c", &print_char},
+		{"i", &print_int},
+		{"f", &print_float},
+		{"s", &print_string},
 		{NULL, NULL}
 	};
 
@@ -83,6 +83,7 @@ void (*get_print_func(char c))(va_list args)
 	{
 		i++;
 	}
+	printf("-c-");
 	return (format_array[i].func);	
 }
 	
@@ -98,7 +99,7 @@ void print_all(const char * const format, ...)
 	va_list args;
 	void (*func)(va_list);
 
-	printf("start");
+	printf("start\n");
 	va_start(args, format);
 
 	i = 0;
