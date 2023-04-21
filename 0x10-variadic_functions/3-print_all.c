@@ -96,7 +96,7 @@ void print_all(const char * const format, ...)
 {
 	int i;
 	va_list args;
-	//void (*func)(va_list);
+	void (*func)(va_list);
 
 	printf("start");
 	va_start(args, format);
@@ -104,10 +104,10 @@ void print_all(const char * const format, ...)
 	i = 0;
 	while (format[i] != '\0')
 	{
-		printf("%c", format[i]);
-		//func = get_print_func(format[i]);
-		//if (func != NULL)
-			//func(args);
+		printf("%c\n", format[i]);
+		func = get_print_func(format[i]);
+		if (func != NULL)
+			func(args);
 		i++;
 	}
 	va_end(args);
