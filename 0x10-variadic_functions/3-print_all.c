@@ -96,7 +96,7 @@ void print_all(const char * const format, ...)
 {
 	int i;
 	va_list args;
-	void (*func);
+	void (*func)(va_list);
 
 	va_start(args, format);
 
