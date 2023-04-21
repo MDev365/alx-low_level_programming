@@ -70,6 +70,7 @@ void print_string(va_list args) {
 void (*get_print_func(char c))(va_list args)
 {
 	int i;
+	printf("-c-");
 	format_st format_array[] = {
 		{"c", &print_char},
 		{"i", &print_int},
