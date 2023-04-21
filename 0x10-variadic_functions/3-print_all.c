@@ -11,7 +11,7 @@
 typedef struct format
 {
 	char *fc;
-	void (*func)(void *);
+	void (*func)(va_list args);
 } format_st;
 
 /**
@@ -20,8 +20,9 @@ typedef struct format
  *
  * Return: void
  */
-void print_char(void* data) {
-    printf("%c", *((char*) data));
+void print_char(va_list args) {
+	char c = va_arg(args, char);
+	printf("%c", c));
 }
 
 /**
@@ -30,8 +31,9 @@ void print_char(void* data) {
  *
  * Return: void
  */
-void print_int(void* data) {
-    printf("%d", *((int*) data));
+void print_int(va_list args) {
+	int i = va_arg(args, int);
+	printf("%d", i);
 }
 
 /**
@@ -40,8 +42,9 @@ void print_int(void* data) {
  *
  * Return: void
  */
-void print_float(void* data) {
-    printf("%f", *((float*) data));
+void print_float(va_list args) {
+	int f = va_arg(args, int);
+	printf("%f", f);
 }
 
 /**
@@ -50,11 +53,12 @@ void print_float(void* data) {
  *
  * Return: void
  */
-void print_string(void* data) {
-	if (data == NULL)
+void print_string(va_list args) {
+	char *s = va_arg(args, char *);
+	if (s == NULL)
 		print("(nil)");
 	else
-		printf("%s", (char*) data);
+		printf("%s", s);
 }
 
 /**
@@ -63,7 +67,7 @@ void print_string(void* data) {
  *
  * Return: pointer to fucntion
  */
-void (*get_print_func(char *c))(void *)
+void (*get_print_func(char *c))(va_list args)
 {
 	int i;
 	format_st format_array[] = {
