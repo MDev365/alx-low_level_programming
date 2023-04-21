@@ -23,7 +23,22 @@ void print_all(const char * const format, ...)
 		{
 			printf("%c", va_arg(args, int));
 		}
-
+		else if (format[i] == 'i')
+		{
+			printf("%d", va_arg(args, int));
+		}
+		else if (format[i] == 'f')
+		{
+			printf("%f", va_arg(args, double));
+		}
+		else if (format[i] == 's')
+		{
+			s = va_arg(args, char *);
+			if (s == NULL)
+				printf("(nil)");
+			else
+				printf("%s", s);
+		}
 
 		if(format[i + 1] != '\0' && (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's'))
 		{
