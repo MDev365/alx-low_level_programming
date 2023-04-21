@@ -108,6 +108,7 @@ void print_all(const char * const format, ...)
 		//func = get_print_func(format[i]);
 		//if (func != NULL)
 			//func(args);
+		i++;
 	}
 	va_end(args);
 	printf("\n");
