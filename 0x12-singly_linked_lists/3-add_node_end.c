@@ -28,8 +28,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	{
 		
 		*head = new;
-
-		printf("1");
 		return (new);
 	}
 
@@ -38,10 +36,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		next_l = next_l->next;
 	}
 
-
-	printf("2");
 	next_l->next = new;
 
-	printf("3");
 	return (new);
 }
