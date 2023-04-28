@@ -5,3 +5,6 @@ void before_main() {
    printf("This is executed before main.
 ");
 }
+void after_main() {
+   printf("This is executed after main.");
+}
