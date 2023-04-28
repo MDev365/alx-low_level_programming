@@ -20,8 +20,8 @@ size_t print_list(const list_t *h)
 	*next_l = *h;
 	while(next_l != NULL)
 	{
-	printf("[%i] %s\n", next_l->len, next_l->s);
-	*next_l = next_l->next;
+	printf("[%i] %s\n", next_l->len, next_l->str);
+	*next_l = *(next_l->next);
 	i++;
 	}
 
