@@ -3,16 +3,16 @@ global main
 section .text
 
 main:
-  mov rax, 1        ; write(
-  mov rdi, 1        ;   STDOUT_FILENO,
-  mov rsi, msg      ;   "Hello, world!\n",
+  mov rax, 1
+  mov rdi, 1
+  mov rsi, msg 
   mov rdx, msglen   ;   sizeof("Hello, world!\n")
-  syscall           ; );
+  syscall
 
   mov rax, 60       ; exit(
   mov rdi, 0        ;   EXIT_SUCCESS
   syscall           ; );
 
 section .rodata
-  msg: db "Hello, Holberton",13,10, 17
+  msg: db "Hello, Holberton\n"
   msglen: equ $ - msg
