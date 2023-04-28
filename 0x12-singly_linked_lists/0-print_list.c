@@ -16,7 +16,7 @@ size_t print_list(const list_t *h)
 		return (0);
 	}
 
-	next_l = h;
+	*next_l = *h;
 	while(next_l != NULL)
 	{
 	printf("[%i] %s\n", h->len, h->s);
@@ -24,6 +24,6 @@ size_t print_list(const list_t *h)
 	i++;
 	}
 
-	printf("-> %i elements", i);
+	printf("-> %li elements", i);
 	return (i);
 }
