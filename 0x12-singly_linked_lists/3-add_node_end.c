@@ -27,8 +27,10 @@ list_t *add_node_end(list_t **head, const char *str)
 		new->next = NULL;
 		*head = new;
 
+		printf("1");
 		return (new);
 	}
+
 	while (next_l != NULL)
 	{
 		if (next_l->next == NULL)
@@ -40,7 +42,9 @@ list_t *add_node_end(list_t **head, const char *str)
 	new->str = strdup(str);
 	new->len = strlen(str);
 	new->next = NULL;
+	printf("2");
 	next_l->next = new;
 
+	printf("3");
 	return (new);
 }
