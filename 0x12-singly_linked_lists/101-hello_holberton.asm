@@ -6,7 +6,7 @@ main:
   mov rax, 1
   mov rdi, 1
   mov rsi, msg 
-  mov rdx, msglen   ;   sizeof("Hello, world!\n")
+  mov rdx, 17   ;   sizeof("Hello, world!\n")
   syscall
 
   mov rax, 60       ; exit(
@@ -15,4 +15,3 @@ main:
 
 section .rodata
   msg: db "Hello, Holberton",13,10
-  msglen: equ $ - msg
