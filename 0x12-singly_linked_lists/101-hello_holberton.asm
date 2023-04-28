@@ -1,13 +1,18 @@
+global _start
 
-   mov	edx,len
-   mov	ecx,msg
-   mov	ebx,1
-   mov	eax,4
-   int	0x80
-	
-   mov	eax,1
-   int	0x80
+section .text
 
-section	.data
-msg db 'Hello, Holberton\n', 0xa
-len equ $-msg
+_start:
+  mov rax, 1        ; write(
+  mov rdi, 1        ;   STDOUT_FILENO,
+  mov rsi, msg      ;   "Hello, world!\n",
+  mov rdx, msglen   ;   sizeof("Hello, world!\n")
+  syscall           ; );
+
+  mov rax, 60       ; exit(
+  mov rdi, 0        ;   EXIT_SUCCESS
+  syscall           ; );
+
+section .rodata
+  msg: db "Hello, Holberton",13,10, 17
+  msglen: equ $ - msg
