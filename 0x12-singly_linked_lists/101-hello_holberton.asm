@@ -14,4 +14,4 @@ main:
   syscall           ; );
 
 section .rodata
-  msg: db "Hello, Holberton",13,10
+  msg: db "Hello, Holberton", `\n`
