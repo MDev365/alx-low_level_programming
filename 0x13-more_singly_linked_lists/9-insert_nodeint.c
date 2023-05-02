@@ -38,7 +38,7 @@ listint_t *insert_nodeint_at_index(listint_t **head,
 		}
 		else
 		{
-			**head = new_node;
+			*(*head) = new_node;
 		}
 		new_node->next = next_node;
 		return (new_node);
