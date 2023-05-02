@@ -31,7 +31,7 @@ int check_if_node_loop(const listint_t *head, const listint_t *node, int i)
 
 /**
  * print_listint_safe -  prints all the elements of a listint_t list.
- * @h: list header
+ * @head: list header
  *
  * Return: the number of nodes
  */
