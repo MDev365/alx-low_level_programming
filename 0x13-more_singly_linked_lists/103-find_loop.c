@@ -38,7 +38,7 @@ int check_if_node_loop(const listint_t *head, const listint_t *node, int i)
 listint_t *find_listint_loop(listint_t *head)
 {
 	size_t i = 0;
-	const listint_t *node;
+	listint_t *node;
 
 	node = head;
 	if (head == NULL)
