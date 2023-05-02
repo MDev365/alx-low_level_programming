@@ -10,11 +10,14 @@
 
 int check_if_node_loop(const listint_t *head, const listint_t *node)
 {
+	int i = 0;
 	while (head != node && head != NULL)
 	{
+		if (head == node)
+			i++;
 		head = head->next;
 	}
-	if (head == node)
+	if (i > 1)
 	{
 		return(1);
 	}
