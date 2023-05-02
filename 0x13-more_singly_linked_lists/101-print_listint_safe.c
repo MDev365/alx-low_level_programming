@@ -47,7 +47,6 @@ size_t print_listint_safe(const listint_t *head)
 			exit(98);			
 		}
 		printf("[%p] %i\n", (void *)node, node->n);
-		prev_node = node;
 		node = node->next;
 		i++;
 	}
