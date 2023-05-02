@@ -4,8 +4,6 @@
 /**
  * check_if_node_loop2 - check_if_node_loop
  * @head: head
- * @node: node to be checked
- * @i: index
  *
  * Return: 1 if there is loop, 0 if not
  */
@@ -13,8 +11,8 @@
 listint_t *check_if_node_loop2(listint_t *head)
 {
 	int idx = 0, occurrence = 0, i;
-	listint_t *current = head, *s_node = head; 
-	/*printf("%i" , i);*/
+	listint_t *current = head, *s_node = head;
+
 	while (current != NULL)
 	{
 		s_node = head;
@@ -51,7 +49,7 @@ size_t free_listint_safe(listint_t **h)
 	node = *h;
 	if (h == NULL || *h == NULL)
 	{
-		return(0);
+		return (0);
 	}
 
 	node_loop = check_if_node_loop2(*h);
