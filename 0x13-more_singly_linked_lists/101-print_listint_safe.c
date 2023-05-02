@@ -43,7 +43,7 @@ size_t print_listint_safe(const listint_t *head)
 	node = head;
 	if (head == NULL)
 	{
-		return (0);
+		exit(98);
 	}
 
 	while (node != NULL)
@@ -51,7 +51,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (check_if_node_loop(head, node, i))
 		{
 			printf("-> [%p] %i\n", (void *)node, node->n);
-			exit(98);			
+			return (i);			
 		}
 		printf("[%p] %i\n", (void *)node, node->n);
 		node = node->next;
