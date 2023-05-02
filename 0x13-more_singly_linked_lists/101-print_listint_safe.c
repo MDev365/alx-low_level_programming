@@ -21,7 +21,6 @@ size_t print_listint_safe(const listint_t *head)
 		if (prev_node < node && prev_node != NULL)
 		{
 			printf("-> [%p] %i\n", (void *)node, node->n);
-			printf("(nil), (nil)");
 			exit(98);			
 		}
 		printf("[%p] %i\n", (void *)node, node->n);
