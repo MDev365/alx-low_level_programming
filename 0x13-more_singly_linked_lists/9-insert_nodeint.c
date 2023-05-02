@@ -32,7 +32,14 @@ listint_t *insert_nodeint_at_index(listint_t **head,
 
 		new_node->n = n;
 
+		if (previous_node != NULL)
+		{
 		previous_node->next = new_node;
+		}
+		else
+		{
+			**head = new_node;
+		}
 		new_node->next = next_node;
 		return (new_node);
 	}
