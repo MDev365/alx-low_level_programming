@@ -23,7 +23,7 @@ int check_if_node_loop(const listint_t *head, const listint_t *node, int i)
 	}
 	if (occurrence > 1)
 	{
-		return(1);
+		return (1);
 	}
 	return (0);
 }
@@ -51,7 +51,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (check_if_node_loop(head, node, i))
 		{
 			printf("-> [%p] %i\n", (void *)node, node->n);
-			return (i);			
+			return (i);
 		}
 		printf("[%p] %i\n", (void *)node, node->n);
 		node = node->next;
