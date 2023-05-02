@@ -10,6 +10,9 @@ listint_t *find_listint_loop(listint_t *head)
 {
 	int idx = 0, occurrence = 0, i;
 	listint_t *current = head, *s_node = head;
+	
+	if (head == NULL)
+		return (NULL);
 
 	while (current != NULL)
 	{
