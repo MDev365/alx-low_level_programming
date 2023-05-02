@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * check_if_node_loop - check_if_node_loop
+ * check_if_node_loop3 - check_if_node_loop
  * @head: head
  * @node: node to be checked
  * @i: index
@@ -9,7 +9,7 @@
  * Return: 1 if there is loop, 0 if not
  */
 
-int check_if_node_loop(const listint_t *head, const listint_t *node, int i)
+int check_if_node_loop3(const listint_t *head, const listint_t *node, int i)
 {
 	int idx = 0, occurrence = 0;
 	/*printf("%i" , i);*/
@@ -48,7 +48,7 @@ listint_t *find_listint_loop(listint_t *head)
 
 	while (node != NULL)
 	{
-		if (check_if_node_loop(head, node, i))
+		if (check_if_node_loop3(head, node, i))
 		{
 			printf("-> [%p] %i\n", (void *)node, node->n);
 			return (node);
