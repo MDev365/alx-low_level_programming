@@ -20,6 +20,7 @@ int check_if_node_loop(const listint_t *head, const listint_t *node, int i)
 		if (head == node)
 			occurrence++;
 		head = head->next;
+		idx++;
 	}
 	if (occurrence > 1)
 	{
