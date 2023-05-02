@@ -4,25 +4,24 @@
  * check_if_node_loop - check_if_node_loop
  * @head: head
  * @node: node to be checked
+ * @i: index
  *
  * Return: 1 if there is loop, 0 if not
  */
 
-int check_if_node_loop(const listint_t *head, const listint_t *node)
+int check_if_node_loop(const listint_t *head, const listint_t *node, int i)
 {
-	int i = 0;
-	while (head != NULL)
+	int idx = 0, occurrence = 0;
+	while (idx != i)
 	{
 		printf("[%p] %i\n", (void *)node, node->n);
 		printf("[%p] %i\n", (void *)head, head->n);
 		printf("%i (i= %i)\n", head->n, i);
 		if (head == node)
-			i++;
-		if (i > 1)
-			break;
+			occurrence++;
 		head = head->next;
 	}
-	if (i > 1)
+	if (occurrence > 1)
 	{
 		return(1);
 	}
@@ -49,7 +48,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (node != NULL)
 	{
-		if (check_if_node_loop(head, node))
+		if (check_if_node_loop(head, node, i))
 		{
 			printf("-> [%p] %i\n", (void *)node, node->n);
 			exit(98);			
