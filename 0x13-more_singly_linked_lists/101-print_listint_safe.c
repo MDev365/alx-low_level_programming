@@ -13,7 +13,7 @@ int check_if_node_loop(const listint_t *head, const listint_t *node)
 	int i = 0;
 	while (head != NULL)
 	{
-		print("%i (i= %i)\n", head->n, i);
+		printf("%i (i= %i)\n", head->n, i);
 		if (head == node)
 			i++;
 		head = head->next;
