@@ -20,10 +20,10 @@ size_t print_listint(const listint_t *h)
 	{
 		if (prev_node > node)
 		{
-			printf("-> [%p] %i\n", node, node->n);
+			printf("-> [%p] %i\n", (void *)node, node->n);
 			exit(98);			
 		}
-		printf("[%p] %i\n", node, node->n);
+		printf("[%p] %i\n", (void *)node, node->n);
 		prev_node = node;
 		node = node->next;
 		i++;
