@@ -12,10 +12,10 @@
 int check_if_node_loop(const listint_t *head, const listint_t *node, int i)
 {
 	int idx = 0, occurrence = 0;
-	printf("%i" , i);
+	/*printf("%i" , i);*/
 	while (idx != i + 1)
 	{
-		printf("   [%p] %i : %i (occ : %i)\n", (void *)head, idx, i, occurrence);
+		/*printf("   [%p] %i : %i (occ : %i)\n", (void *)head, idx, i, occurrence);*/
 		if (head == node)
 			occurrence++;
 		head = head->next;
