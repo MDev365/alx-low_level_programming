@@ -31,7 +31,7 @@ int check_if_node_loop(const listint_t *head, const listint_t *node)
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t i = 0;
-	const listint_t *node, *prev_node = NULL;
+	const listint_t *node;
 
 	node = head;
 	if (head == NULL)
