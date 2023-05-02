@@ -6,6 +6,7 @@
  * @node: node to be checked
  *
  * Return: 1 if there is loop, 0 if not
+ */
 
 int check_if_node_loop(const listint_t *head, const listint_t *node)
 {
