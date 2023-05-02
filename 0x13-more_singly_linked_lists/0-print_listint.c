@@ -7,13 +7,13 @@
  *
  * Return: the number of nodes
  */
-size_t print_listint(const listint_t *head)
+size_t print_listint(const listint_t *h)
 {
 	size_t i = 0;
 	const listint_t *node;
 
-	node = head;
-	if (head == NULL)
+	node = h;
+	if (h == NULL)
 	{
 		return (0);
 	}
