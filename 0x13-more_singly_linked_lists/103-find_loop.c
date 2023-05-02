@@ -1,35 +1,6 @@
 #include "lists.h"
 
 /**
- * check_if_node_loop3 - check_if_node_loop
- * @head: head
- * @node: node to be checked
- * @i: index
- *
- * Return: 1 if there is loop, 0 if not
- */
-
-int check_if_node_loop3(const listint_t *head, const listint_t *node, int i)
-{
-	int idx = 0, occurrence = 0;
-	/*printf("%i" , i);*/
-	while (idx != i + 1)
-	{
-		/*printf("   [%p] %i : %i (occ : %i)\n", (void *)head, idx, i, occurrence);*/
-		if (head == node)
-			occurrence++;
-		head = head->next;
-		idx++;
-	}
-	if (occurrence > 1)
-	{
-		return (1);
-	}
-	return (0);
-}
-
-
-/**
  * find_listint_loop - finds the loop in a linked list.
  * @head: list header
  *
@@ -37,23 +8,25 @@ int check_if_node_loop3(const listint_t *head, const listint_t *node, int i)
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	size_t i = 0;
-	listint_t *node;
+	int idx = 0, occurrence = 0, i;
+	listint_t *current = head, *s_node = head;
 
-	node = head;
-	if (head == NULL)
+	while (current != NULL)
 	{
-		return (NULL);
-	}
-
-	while (node != NULL)
-	{
-		if (check_if_node_loop3(head, node, i))
+		s_node = head;
+		i = 0;
+		while (s_node != NULL && i != idx + 1)
 		{
-			return (node);
+			if (s_node == current)
+				occurrence++;
+			if (occurrence > 1)
+				return (s_node);
+			s_node = s_node->next;
+			i++;
 		}
-		node = node->next;
-		i++;
+
+		current = current->next;
+		idx++;
 	}
 
 	return (NULL);
