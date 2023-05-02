@@ -40,7 +40,7 @@ size_t free_listint_safe(listint_t **h)
 	size_t i = 0;
 	const listint_t *node;
 
-	node = h;
+	node = *h;
 	if (h == NULL || *h == NULL)
 	{
 		return(0);
@@ -48,7 +48,7 @@ size_t free_listint_safe(listint_t **h)
 
 	while (*h != NULL)
 	{
-		node = *h->next;
+		node = (*h)->next;
 		free(*h);
 		*h = node;
 		i++;
