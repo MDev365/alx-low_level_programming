@@ -10,9 +10,9 @@
  * Return: 1 if there is loop, 0 if not
  */
 
-listint_t check_if_node_loop2(listint_t *head)
+listint_t *check_if_node_loop2(listint_t *head)
 {
-	int idx = 0, occurrence = 0;
+	int idx = 0, occurrence = 0, i;
 	listint_t *current = head, *s_node = head; 
 	/*printf("%i" , i);*/
 	while (current != NULL)
