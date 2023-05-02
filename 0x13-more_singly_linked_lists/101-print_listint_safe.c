@@ -10,8 +10,8 @@ size_t print_listint_safe(const listint_t *head)
 	size_t i = 0;
 	const listint_t *node, *prev_node = NULL;
 
-	node = h;
-	if (h == NULL)
+	node = head;
+	if (head == NULL)
 	{
 		return (0);
 	}
