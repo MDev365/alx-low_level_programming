@@ -30,31 +30,27 @@ int check_if_node_loop(const listint_t *head, const listint_t *node, int i)
 
 
 /**
- * print_listint_safe -  prints all the elements of a listint_t list.
- * @head: list header
+ * free_listint_safe - frees a listint_t list..
+ * @h: list header
  *
  * Return: the number of nodes
  */
-size_t free_listint_safe(const listint_t *head)
+size_t free_listint_safe(listint_t **h)
 {
 	size_t i = 0;
 	const listint_t *node;
 
-	node = head;
-	if (head == NULL)
+	node = h;
+	if (h == NULL || *h == NULL)
 	{
-		exit(98);
+		return(0);
 	}
 
-	while (node != NULL)
+	while (*h != NULL)
 	{
-		if (check_if_node_loop(head, node, i))
-		{
-			printf("-> [%p] %i\n", (void *)node, node->n);
-			return (i);
-		}
-		printf("[%p] %i\n", (void *)node, node->n);
-		node = node->next;
+		node = *h->next;
+		free(*h);
+		*h = node;
 		i++;
 	}
 
