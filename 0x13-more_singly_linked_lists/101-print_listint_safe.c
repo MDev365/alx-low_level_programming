@@ -1,4 +1,26 @@
 #include "lists.h"
+
+/**
+ * check_if_node_loop - check_if_node_loop
+ * @head: head
+ * @node: node to be checked
+ *
+ * Return: 1 if there is loop, 0 if not
+
+int check_if_node_loop(const listint_t *head, const listint_t *node)
+{
+	while (head != node && head != NULL)
+	{
+		head = head->next;
+	}
+	if (head == node)
+	{
+		return(1);
+	}
+	return (0);
+}
+
+
 /**
  * print_listint_safe -  prints all the elements of a listint_t list.
  * @h: list header
@@ -18,7 +40,7 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (node != NULL)
 	{
-		if (prev_node < node && prev_node != NULL)
+		if (check_if_node_loop(head, node))
 		{
 			printf("-> [%p] %i\n", (void *)node, node->n);
 			exit(98);			
