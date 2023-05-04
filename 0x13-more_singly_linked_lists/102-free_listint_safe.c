@@ -8,7 +8,7 @@
  * Return: 1 if there is loop, 0 if not
  */
 
-listint_t *check_if_node_loop2(listint_t *head)
+int *check_if_node_loop2(listint_t *head)
 {
 	int idx = 0, occurrence = 0, i;
 	listint_t *current = head, *s_node = head;
@@ -22,7 +22,7 @@ listint_t *check_if_node_loop2(listint_t *head)
 			if (s_node == current)
 				occurrence++;
 			if (occurrence > 1)
-				return (s_node);
+				return (i);
 			s_node = s_node->next;
 			i++;
 		}
@@ -31,7 +31,7 @@ listint_t *check_if_node_loop2(listint_t *head)
 		idx++;
 	}
 
-	return (NULL);
+	return (-1);
 }
 
 
@@ -43,7 +43,7 @@ listint_t *check_if_node_loop2(listint_t *head)
  */
 size_t free_listint_safe(listint_t **h)
 {
-	size_t i = 0;
+	size_t i = 0, loop_idx;
 	listint_t *node, *node_loop;
 
 	node = *h;
@@ -52,8 +52,8 @@ size_t free_listint_safe(listint_t **h)
 		return (0);
 	}
 
-	node_loop = check_if_node_loop2(*h);
-	while (*h != NULL && *h != node_loop)
+	loop_idx = check_if_node_loop2(*h);
+	while (*h != NULL && *i != loop_idx)
 	{
 		node = (*h)->next;
 		free(*h);
