@@ -23,7 +23,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		else
 		{
-			ui = ui * 2 + (b[i] + '0');
+			ui = ui * 2 + (b[i] - '0');
 		}
 		i++;
 	}
