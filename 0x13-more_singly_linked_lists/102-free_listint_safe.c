@@ -60,13 +60,23 @@ size_t free_listint_safe(listint_t **h)
 		return (0);
 	}
 
-	loop_idx = check_if_node_loop2(*h);
+	/*loop_idx = check_if_node_loop2(*h);*/
 	while (*h != NULL && i != loop_idx + 1)
 	{
-		node = (*h)->next;
-		free(*h);
-		*h = node;
-		i++;
+		if (node < node->next)
+		{
+			node = (*h)->next;
+			free(*h);
+			*h = node;
+			i++;
+		}
+		else
+		{
+			free(*h);
+			*h = NULL;
+			i++;
+			break;
+		}
 	}
 
 	*h = NULL;
