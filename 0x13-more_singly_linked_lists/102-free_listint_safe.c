@@ -44,7 +44,7 @@ int check_if_node_loop2(listint_t *head)
 size_t free_listint_safe(listint_t **h)
 {
 	size_t i = 0, loop_idx;
-	listint_t *node, *node_loop;
+	listint_t *node;
 
 	node = *h;
 	if (h == NULL || *h == NULL)
@@ -53,7 +53,7 @@ size_t free_listint_safe(listint_t **h)
 	}
 
 	loop_idx = check_if_node_loop2(*h);
-	while (*h != NULL && *i != loop_idx)
+	while (*h != NULL && i != loop_idx)
 	{
 		node = (*h)->next;
 		free(*h);
