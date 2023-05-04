@@ -27,7 +27,7 @@ int check_if_node_loop2(listint_t *head)
 				occ++;
 			}
 			if (occ > 1)
-				return(i);
+				return (i);
 			s_node = s_node->next;
 			i++;
 		}
