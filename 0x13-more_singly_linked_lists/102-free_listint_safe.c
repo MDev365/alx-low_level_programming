@@ -22,7 +22,7 @@ int check_if_node_loop2(listint_t *head)
 		{
 			if (s_node == current)
 			{
-				printf("\ni: %i (%p:%p)\n", i, (void *)s_node, (void *)current)
+				printf("\ni: %i (%p:%p)\n", i, (void *)s_node, (void *)current);
 				occ++;
 			}
 			if (occ > 1)
