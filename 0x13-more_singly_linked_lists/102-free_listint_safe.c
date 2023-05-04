@@ -24,7 +24,7 @@ int check_if_node_loop2(listint_t *head)
 			if (occurrence > 1)
 			{
 				/*printf("loop i: %i\n", i);*/
-				return (i);
+				return (idx);
 			}
 			s_node = s_node->next;
 			i++;
