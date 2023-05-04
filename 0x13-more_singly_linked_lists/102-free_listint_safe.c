@@ -20,7 +20,7 @@ int check_if_node_loop2(listint_t *head)
 		while (s_node != NULL)
 		{
 			printf("loop i: %i\n", i);
-			printf("p i: %p\n", s_node);
+			printf("p i: %p\n", (void *)s_node);
 			if (s_node == current)
 			{
 				occurrence++;
