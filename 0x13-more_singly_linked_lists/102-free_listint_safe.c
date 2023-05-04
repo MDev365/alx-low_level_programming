@@ -10,27 +10,20 @@
 
 int check_if_node_loop2(listint_t *head)
 {
-	int idx = 0, occurrence = 0, i;
+	int idx = 0, occ = 0, i;
 	listint_t *current = head, *s_node = head;
 
 	while (current != NULL)
 	{
 		s_node = head;
 		i = 0;
-		while (s_node != NULL)
+		
+		while (s_node != NULL && i != idx)
 		{
-			printf("loop i: %i\n", i);
-			printf("p i: %p\n", (void *)s_node);
 			if (s_node == current)
-			{
-				occurrence++;
-				printf("loop occurrence: %i\n", occurrence);
-			}
-			if (occurrence > 1)
-			{
-				printf("loop i: %i\n", i);
-				return (i);
-			}
+				occ++;
+			if (occ > 1)
+				return(i);
 			s_node = s_node->next;
 			i++;
 		}
