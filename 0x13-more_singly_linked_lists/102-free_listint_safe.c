@@ -21,7 +21,10 @@ int check_if_node_loop2(listint_t *head)
 		while (s_node != NULL && i != idx - 1)
 		{
 			if (s_node == current)
+			{
+				printf("\ni: %i (%p:%p)\n", i, (void *)s_node, (void *)current)
 				occ++;
+			}
 			if (occ > 1)
 				return(i);
 			s_node = s_node->next;
