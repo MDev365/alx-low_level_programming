@@ -18,7 +18,7 @@ int check_if_node_loop2(listint_t *head)
 		s_node = head;
 		i = 0;
 		
-		while (s_node != NULL && i != idx - 1)
+		while (s_node != NULL && i != idx)
 		{
 			if (s_node == current)
 			{
