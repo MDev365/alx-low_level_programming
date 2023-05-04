@@ -20,7 +20,10 @@ int check_if_node_loop2(listint_t *head)
 		while (s_node != NULL)
 		{
 			if (s_node == current)
+			{
 				occurrence++;
+				printf("loop occurrence: %i\n", occurrence);
+			}
 			if (occurrence > 1)
 			{
 				printf("loop i: %i\n", i);
