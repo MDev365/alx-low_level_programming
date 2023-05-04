@@ -64,7 +64,7 @@ size_t free_listint_safe(listint_t **h)
 	(void)loop_idx;
 	while (*h != NULL)
 	{
-		if (node < node->next)
+		if (node < node->next && node->next != NULL)
 		{
 			node = (*h)->next;
 			free(*h);
