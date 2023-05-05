@@ -27,7 +27,7 @@ void print_binary(unsigned long int n)
 		}
 		else
 		{
-			if(start == 1)
+			if (start == 1)
 				_putchar('0');
 		}
 		m = m >> 1;
