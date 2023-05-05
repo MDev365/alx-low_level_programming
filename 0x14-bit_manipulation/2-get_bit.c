@@ -13,15 +13,14 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned int start, i = 0;
 	unsigned long int m;
 
-	if (n == 0)
+	if (n == 0 && index = 0)
 	{
-		return(-1);
+		return(0);
 	}
 
-	m = 1UL << ((sizeof(unsigned long) * 8) - 1);
-	while (m != 0)
+	while (n > 0)
 	{
-		if (n & m)
+		if (n & 1)
 		{
 			start = 1;
       		if (i == index)
@@ -37,7 +36,8 @@ int get_bit(unsigned long int n, unsigned int index)
 				i++;
 			}
 		}
-		m = m >> 1;
+		n = n >> 1;
 	}
+
 	return (-1);
 }
