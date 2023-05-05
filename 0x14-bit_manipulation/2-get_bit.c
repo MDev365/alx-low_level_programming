@@ -18,7 +18,7 @@ int get_bit(unsigned long int n, unsigned int index)
 		return(-1);
 	}
 
-	 m = 1UL << ((sizeof(unsigned long) * 8) - 1);
+	m = 1UL << ((sizeof(unsigned long) * 8) - 1);
 	while (m != 0)
 	{
 		if (n & m)
@@ -39,4 +39,5 @@ int get_bit(unsigned long int n, unsigned int index)
 		}
 		m = m >> 1;
 	}
+	return (-1);
 }
