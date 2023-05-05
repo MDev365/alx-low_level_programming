@@ -9,7 +9,7 @@
 void print_binary(unsigned long int n)
 {
 	int i = 0;
-	char binary_num[64];
+	unsigned long int m;
 
 	if (n == 0)
 	{
@@ -17,17 +17,14 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
+	 m = 1UL << ((sizeof(unsigned long) * 8) - 1);
 	while (n > 0)
 	{
-		if (n & 1)
-			binary_num[i] = '1';
+		if (n & m)
+			_putchar(binary_num[i]);
 		else
-			binary_num[i] = '0';
-		n = n >> 1;
+			_putchar(binary_num[i]);
+		n = n << 1;
 		i++;
 	}
-
-	i--;
-	for (; i >= 0 ; i--)
-		_putchar(binary_num[i]);
 }
