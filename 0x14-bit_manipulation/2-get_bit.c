@@ -22,14 +22,14 @@ int get_bit(unsigned long int n, unsigned int index)
 		if (n & 1)
 		{
       			if (i == index)
-				return ('1');
+				return (1);
 			i++;
 		}
 		else
 		{
 
 			if (i == index)
-				return ('0');
+				return (0);
 			i++;
 
 		}
