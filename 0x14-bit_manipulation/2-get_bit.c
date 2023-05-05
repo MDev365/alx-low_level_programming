@@ -15,8 +15,7 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	if (n == 0)
 	{
-		printf("0");
-		return;
+		return(-1);
 	}
 
 	 m = 1UL << ((sizeof(unsigned long) * 8) - 1);
