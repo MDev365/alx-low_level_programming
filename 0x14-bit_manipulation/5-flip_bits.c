@@ -11,9 +11,25 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 {
-	if (index > 64)
-		return (-1);
+	unsigned long int s;
+	int bits = 0;
 
-	*n = *n & ~(1 << index);
-	return (1);
+	s = (n & m);
+	
+	if (n == 0)
+	{
+		return (0);
+	}
+
+	while (n > 0)
+	{
+		if (n & 1)
+		{
+			bits++;
+		}
+
+		n = n >> 1;
+	} 
+
+	return (bits);
 }
