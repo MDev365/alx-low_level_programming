@@ -11,9 +11,8 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int start, i = 0;
-	unsigned long int m;
 
-	if (n == 0 && index = 0)
+	if (n == 0 && index == 0)
 	{
 		return(0);
 	}
@@ -22,19 +21,17 @@ int get_bit(unsigned long int n, unsigned int index)
 	{
 		if (n & 1)
 		{
-			start = 1;
-      		if (i == index)
+      			if (i == index)
 				return ('1');
 			i++;
 		}
 		else
 		{
-			if (start == 1)
-			{
-				if (i == index)
-					return ('0');
-				i++;
-			}
+
+			if (i == index)
+				return ('0');
+			i++;
+
 		}
 		n = n >> 1;
 	}
