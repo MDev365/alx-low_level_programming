@@ -15,7 +15,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	int bits = 0;
 
 	s = (n ^ m);
-	
+
 	if (s == 0)
 	{
 		return (0);
@@ -29,7 +29,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		}
 
 		s = s >> 1;
-	} 
+	}
 
 	return (bits);
 }
