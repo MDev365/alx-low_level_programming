@@ -29,5 +29,5 @@ void print_binary(unsigned long int n)
 
 	i--;
 	for (; i >= 0 ; i--)
-		printf("%c",binary_num[i]);
+		_putchar(binary_num[i]);
 }
