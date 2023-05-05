@@ -8,7 +8,6 @@
  */
 void print_binary(unsigned long int n)
 {
-	int i = 0;
 	unsigned long int m;
 
 	if (n == 0)
@@ -24,7 +23,6 @@ void print_binary(unsigned long int n)
 			_putchar('1');
 		else
 			_putchar('0');
-		n = n << 1;
-		i++;
+		m = m >> 1;
 	}
 }
