@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 	int i = 0;
 	char binary_num[64];
 
-	if (n = 0)
+	if (n == 0)
 	{
 		printf("0");
 		return;
@@ -23,7 +23,7 @@ void print_binary(unsigned long int n)
 			binary_num[i] = '1';
 		else
 			binary_num[i] = '0';
-		n >> 1;
+		n = n >> 1;
 		i++;
 	}
 
