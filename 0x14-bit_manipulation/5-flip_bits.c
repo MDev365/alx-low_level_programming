@@ -16,19 +16,19 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	s = (n & m);
 	
-	if (n == 0)
+	if (s == 0)
 	{
 		return (0);
 	}
 
-	while (n > 0)
+	while (s > 0)
 	{
-		if (n & 1)
+		if (s & 1)
 		{
 			bits++;
 		}
 
-		n = n >> 1;
+		s = s >> 1;
 	} 
 
 	return (bits);
