@@ -25,10 +25,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (file == -1)
 		return (0);
 
-	while ((r = read(file, &c, sizeof(char))) > 0 && i != letters)
+	while ((r = read(file, &c, sizeof(char))) != -1 && i != letters)
 	{
 		w = write(STDOUT_FILENO, &c, sizeof(char));
-		if (w < 0)
+		if (w == -1)
 			return (0);
 		i++;
 	}
