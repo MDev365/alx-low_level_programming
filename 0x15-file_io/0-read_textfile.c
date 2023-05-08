@@ -3,8 +3,8 @@
 /**
  * read_textfile - reads a text file and prints it
  * to the POSIX standard output.
- * @filename: 
- * @letters: 
+ * @filename: file name
+ * @letters: the number of letters it should read and print
  *
  * Return: the actual number of letters it could read and print
  * if filename is NULL return 0, if write fails or does not
@@ -23,12 +23,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	file = open(filename, O_RDONLY);
 	if (file == -1)
-		return 0;
+		return (0);
 
 	while ((b = read(file, &c, sizeof(char))) > 0 && i != letters)
 	{
 		write(STDOUT_FILENO, &c, sizeof(char));
 		i++;
 	}
-	return (i);	
+
+	return (i);
 }
