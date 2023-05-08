@@ -44,18 +44,19 @@ int main(int argc, char **argv)
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			exit(99);			
 		}
+		file_to = open(argv[2], O_WRONLY | O_APPEND);
 		
 	}
 	if(close(file_from) == -1)
 	{
 		dprintf(2, "Error: Can't read from file %i\n", file_from);
-		exit(98);
+		exit(100);
 	}
 	
 	if(close(file_to) == -1)
 	{
 		dprintf(2, "Error: Can't read from file %i\n", file_to);
-		exit(98);
+		exit(100);
 	}
 
 	return (0);
