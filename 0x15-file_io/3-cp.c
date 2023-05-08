@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 {
 	int file_to, file_from;
 	int r, w;
-	char *buf[1024];
+	char buf[1024];
 
 	if (argc != 3)
 	{
