@@ -49,7 +49,6 @@ int main(int argc, char **argv)
 	}
 	while ((r = read(file_from, buf, 1024) > 0))
 	{
-		printf("%s\n", buf);
 		w = write(file_to, buf, r);
 		if (w == -1)
 		{
