@@ -51,8 +51,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	do
-	{
+	do {
 		w = write(file_to, buf, r);
 		if (w == -1 || file_to == -1)
 		{
