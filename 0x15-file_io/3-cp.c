@@ -1,6 +1,21 @@
 #include "main.h"
 
 /**
+ * file_close - close file or print error and exit
+ * @fd: the value of the file descriptor
+ *
+ * Return: void
+ */
+void file_close(int fd)
+{
+	if (close(fd) == -1)
+	{
+		dprintf(2, "Error: Can't close fd %i\n", fd);
+		exit(100);
+	}
+}
+
+/**
  * main - copies the content of a file to another file.
  * @argc: argc
  * @argv: argv
@@ -43,15 +58,7 @@ int main(int argc, char **argv)
 		}
 		file_to = open(argv[2], O_WRONLY | O_APPEND);
 	}
-	if (close(file_from) == -1)
-	{
-		dprintf(2, "Error: Can't read from file %i\n", file_from);
-		exit(100);
-	}
-	if (close(file_to) == -1)
-	{
-		dprintf(2, "Error: Can't read from file %i\n", file_to);
-		exit(100);
-	}
+	file_close(file_from);
+	file_close(file_to);
 	return (0);
 }
