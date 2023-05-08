@@ -11,7 +11,7 @@
 int main(int argc, char *argv)
 {
 	int file_to, file_from;
-	int w, len = 0;
+	int r, w;
 	char *buf[1024];
 
 	if (argc != 3)
