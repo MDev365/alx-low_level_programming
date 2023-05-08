@@ -25,7 +25,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (file == -1)
 		return 0;
 
-	while ((b = read(file, &c, sizeof(char))) != EOF && i != letters)
+	while ((b = read(file, &c, sizeof(char))) > 0 && i != letters)
 	{
 		printf("%c", c);
 		write(STDOUT_FILENO, &c, sizeof(char));
