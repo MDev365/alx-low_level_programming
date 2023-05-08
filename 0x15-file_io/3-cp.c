@@ -8,7 +8,7 @@
  * Return: 1 on success, -1 on failure
  */
 
-int main(int argc, char *argv)
+int main(int argc, char **argv)
 {
 	int file_to, file_from;
 	int r, w;
