@@ -16,14 +16,14 @@ int main(int argc, char *argv)
 
 	if (argc != 3)
 	{
-		dprintf("Usage: cp file_from file_to\n");
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);		
 	}
 
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
-		dprintf("Error: Can't read from file %s\n", argv[1]);
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
@@ -34,7 +34,7 @@ int main(int argc, char *argv)
 	w = write(file, text_content, len);
 	if (file_to == -1)
 	{
-		dprintf("Error: Can't write to %s\n", argv[2]);
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 
@@ -43,20 +43,20 @@ int main(int argc, char *argv)
 		w = write(file_to, buf, r);
 		if (w == -1)
 		{
-			dprintf("Error: Can't write to %s\n", argv[2]);
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			exit(99);			
 		}
 		
 	}
 	if(close(file_from) == -1)
 	{
-		dprintf("Error: Can't read from file %i\n", file_from);
+		dprintf(2, "Error: Can't read from file %i\n", file_from);
 		exit(98);
 	}
 	
 	if(close(file_to) == -1)
 	{
-		dprintf("Error: Can't read from file %i\n", file_to);
+		dprintf(2, "Error: Can't read from file %i\n", file_to);
 		exit(98);
 	}
 
