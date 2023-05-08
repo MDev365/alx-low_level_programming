@@ -34,12 +34,15 @@ int main(int argc, char **argv)
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+
 	file_from = open(argv[1], O_RDONLY);
-	if (file_from == -1)
+	r = read(file_from, buf, 1024);
+	if (file_from == -1 || r == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
+
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,
 				 S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (file_to == -1)
@@ -47,16 +50,19 @@ int main(int argc, char **argv)
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while ((r = read(file_from, buf, 1024) > 0))
+
+	do
 	{
 		w = write(file_to, buf, r);
-		if (w == -1)
+		if (w == -1 || file_to == -1)
 		{
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
+		r = read(file_from, buf, 1024)
 		file_to = open(argv[2], O_WRONLY | O_APPEND);
-	}
+	} while (r > 0)
+
 	file_close(file_from);
 	file_close(file_to);
 	return (0);
