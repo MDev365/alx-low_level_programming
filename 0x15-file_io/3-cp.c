@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	if (argc != 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to\n");
-		exit(97);	
+		exit(97);
 	}
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 		if (w == -1)
 		{
 			dprintf(2, "Error: Can't write to %s\n", argv[2]);
-			exit(99);	
+			exit(99);
 		}
 		file_to = open(argv[2], O_WRONLY | O_APPEND);
 	}
