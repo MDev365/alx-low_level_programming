@@ -47,6 +47,7 @@ int main(int argc, char **argv)
 				 S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (file_to == -1)
 	{
+		file_close(file_from);
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
