@@ -12,6 +12,9 @@ int main(int argc, char **argv)
 {
 	(void)argv;
 	if (argc != 2)
-		return (1);
+	{
+		dprintf(2, "Error");
+		exit(98);
+	}
 	return (0);
 }
