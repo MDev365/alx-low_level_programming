@@ -58,6 +58,8 @@ int main(int argc, char **argv)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
+		if (r < 1024)
+			break;
 		r = read(file_from, buf, 1024);
 		/*file_to = open(argv[2], O_WRONLY | O_APPEND);*/
 	} while (r > 0);
