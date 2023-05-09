@@ -36,7 +36,6 @@ int main(int argc, char **argv)
 	}
 
 	file_from = open(argv[1], O_RDONLY);
-	r = read(file_from, buf, 1024);
 	if (file_from == -1 || r == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -51,6 +50,12 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
+	r = read(file_from, buf, 1024);
+	if (r == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 	do {
 		w = write(file_to, buf, r);
 		if (w == -1 || w != r)
