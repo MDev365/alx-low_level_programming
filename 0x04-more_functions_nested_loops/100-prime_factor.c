@@ -11,7 +11,7 @@ int main(void)
 {
 	long int num, max_factor = 0, d;
 
-	n = 612852475143;
+	num = 612852475143;
 
 	for (d = 2; d <= sqrt(num); d++)
 	{
