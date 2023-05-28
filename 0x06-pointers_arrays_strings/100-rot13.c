@@ -17,7 +17,10 @@ char *rot13(char *str)
 	{
 		for (j = 0 ; alpha[j] != '\0' ; j++)
 		{
-			str[i] = rot13[j];
+			if (str[i] == alpha[j])
+			{
+				str[i] = rot13[j];
+			}
 		}
 		/*
 		*if ((s[i] >= 'A' && s[i] <= 'Z' && n = 1) || (s[i] >= 'a' && s[i] <= 'z' && n = 2))
