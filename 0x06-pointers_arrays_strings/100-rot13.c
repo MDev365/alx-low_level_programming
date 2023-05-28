@@ -5,23 +5,32 @@
  *
  * Return: pointer to string
  */
-char *rot13(char *s)
+char *rot13(char *str)
 {
-	int i, n;
+	int i, j;
 
-	for (i = 0 ; s[i] != '\0' ; i++)
+	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	
+	for (i = 0 ; str[i] != '\0' ; i++)
 	{
-		if ((s[i] >= 'A' && s[i] <= 'Z' && n = 1) || (s[i] >= 'a' && s[i] <= 'z' && n = 2))
+		for (j = 0 ; alpha[i] != '\0' ; i++)
 		{
-			if ((s[i] + 13 > 'Z' && n == 1) || (s[i] + 13 > 'z' && n == 2))
-				_putchar(s[i] - 13);
-			else
-				_putchar(s[i] + 13);
+			str[i] = rot13[i];
 		}
-		else
-		{
-			_putchar(s[i]);
-		}
+		/*
+		*if ((s[i] >= 'A' && s[i] <= 'Z' && n = 1) || (s[i] >= 'a' && s[i] <= 'z' && n = 2))
+		*{
+		*	if ((s[i] + 13 > 'Z' && n == 1) || (s[i] + 13 > 'z' && n == 2))
+		*		_putchar(s[i] - 13);
+		*	else
+		*		_putchar(s[i] + 13);
+		*}
+		*else
+		*{
+		*	_putchar(s[i]);
+		*}
+		*/
 	}
-	return (s);
+	return (str);
 }
