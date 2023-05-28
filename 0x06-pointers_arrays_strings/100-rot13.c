@@ -2,7 +2,7 @@
 
 /**
  * rot13 - print string in rot13
- * @s: string
+ * @str: string
  *
  * Return: pointer to string
  */
@@ -12,7 +12,7 @@ char *rot13(char *str)
 
 	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	
+
 	for (i = 0 ; str[i] != '\0' ; i++)
 	{
 		for (j = 0 ; alpha[j] != '\0' ; j++)
@@ -20,10 +20,12 @@ char *rot13(char *str)
 			if (str[i] == alpha[j])
 			{
 				str[i] = rot13[j];
+				break;
 			}
 		}
 		/*
-		*if ((s[i] >= 'A' && s[i] <= 'Z' && n = 1) || (s[i] >= 'a' && s[i] <= 'z' && n = 2))
+		*if ((s[i] >= 'A' && s[i] <= 'Z' && n = 1) ||
+		*(s[i] >= 'a' && s[i] <= 'z' && n = 2))
 		*{
 		*	if ((s[i] + 13 > 'Z' && n == 1) || (s[i] + 13 > 'z' && n == 2))
 		*		_putchar(s[i] - 13);
