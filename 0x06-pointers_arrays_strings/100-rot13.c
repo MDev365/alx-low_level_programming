@@ -1,3 +1,4 @@
+#include "main.h"
 
 /**
  * rot13 - print string in rot13
@@ -14,9 +15,9 @@ char *rot13(char *str)
 	
 	for (i = 0 ; str[i] != '\0' ; i++)
 	{
-		for (j = 0 ; alpha[i] != '\0' ; i++)
+		for (j = 0 ; alpha[j] != '\0' ; j++)
 		{
-			str[i] = rot13[i];
+			str[i] = rot13[j];
 		}
 		/*
 		*if ((s[i] >= 'A' && s[i] <= 'Z' && n = 1) || (s[i] >= 'a' && s[i] <= 'z' && n = 2))
