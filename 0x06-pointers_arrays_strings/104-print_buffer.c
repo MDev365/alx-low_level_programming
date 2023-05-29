@@ -7,9 +7,9 @@
  *
  * Return: void
  */
-void print_hex(int num, int digits) 
+void print_hex(int num, int digits)
 {
-    const char hex_lookup[] = "0123456789abcdef";
+	const char hex_lookup[] = "0123456789abcdef";
 	int i, array_size = 20;
 	char hex[array_size];
 
@@ -17,7 +17,7 @@ void print_hex(int num, int digits)
 	*hex[0] = hex_lookup[(c >> 4) & 0xf];
     *hex[1] = hex_lookup[c & 0xf];
 	*/
- 
+
 	for (i = 0 ; num != 0 ; i++)
 	{
 		hex[i] = hex_lookup[num % 16];
@@ -48,7 +48,7 @@ void print_buffer(char *b, int size)
 
 	for (i = 0; i < size ; i += 10)
 	{
-		print_hex( i, 8);
+		print_hex(i, 8);
 		_putchar(':');
 		_putchar(' ');
 		for (j = 0; j < 10 ; j++)
@@ -59,7 +59,7 @@ void print_buffer(char *b, int size)
 				_putchar(' ');
 			}
 			else
-				print_hex(b[i +j], 2);
+				print_hex(b[i + j], 2);
 
 			if (j % 2 != 0)
 				_putchar(' ');
@@ -67,8 +67,8 @@ void print_buffer(char *b, int size)
 
 		for (j = 0; j < 10 && j + i < size; j++)
 		{
-			if ((b[i +j]) >= ' ' && (b[i +j]) <= '~')
-				_putchar(b[i +j]);
+			if ((b[i + j]) >= ' ' && (b[i + j]) <= '~')
+				_putchar(b[i + j]);
 			else
 				_putchar('.');
 		}
