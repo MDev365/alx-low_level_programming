@@ -39,7 +39,7 @@ void print_buffer(char *b, int size)
 {
 	int i, j;
 
-	fflush(stdin);
+	fflush(stdout);
 	if (size <= 0)
 		_putchar('\n');
 
