@@ -12,7 +12,6 @@ void print_hex(int num, int digits)
     const char hex_lookup[] = "0123456789abcdef";
 	int i, array_size = 20;
 	char hex[array_size];
-	
 
     /*
 	*hex[0] = hex_lookup[(c >> 4) & 0xf];
@@ -46,7 +45,7 @@ void print_buffer(char *b, int size)
 
 	if (size <= 0)
 		_putchar('\n');
-			  
+
 	for (i = 0; i < size ; i += 10)
 	{
 		print_hex( i, 8);
@@ -65,7 +64,7 @@ void print_buffer(char *b, int size)
 			if (j % 2 != 0)
 				_putchar(' ');
 		}
-	
+
 		for (j = 0; j < 10 && j + i < size; j++)
 		{
 			if ((b[i +j]) >= ' ' && (b[i +j]) <= '~')
