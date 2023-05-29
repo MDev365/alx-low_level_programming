@@ -10,8 +10,8 @@
 void print_hex(int num, int digits)
 {
 	const char hex_lookup[] = "0123456789abcdef";
-	int i, array_size = 20;
-	char hex[array_size];
+	int i;
+	char hex[20];
 
     /*
 	*hex[0] = hex_lookup[(c >> 4) & 0xf];
@@ -23,7 +23,7 @@ void print_hex(int num, int digits)
 		hex[i] = hex_lookup[num % 16];
 		num = num / 16;
 	}
-	for (; i < array_size ; i++)
+	for (; i < 20 ; i++)
 		hex[i] = '0';
 
 	for (i = digits - 1; i >= 0 ; i--)
