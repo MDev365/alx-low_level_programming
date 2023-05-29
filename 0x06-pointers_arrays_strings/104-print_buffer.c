@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_hex - convert int to hex and print it
@@ -38,6 +39,7 @@ void print_buffer(char *b, int size)
 {
 	int i, j;
 
+	fflush(stdin);
 	if (size <= 0)
 		_putchar('\n');
 
