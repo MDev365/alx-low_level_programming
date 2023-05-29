@@ -13,11 +13,6 @@ void print_hex(int num, int digits)
 	int i;
 	char hex[20];
 
-    /*
-	*hex[0] = hex_lookup[(c >> 4) & 0xf];
-    *hex[1] = hex_lookup[c & 0xf];
-	*/
-
 	for (i = 0 ; num != 0 ; i++)
 	{
 		hex[i] = hex_lookup[num % 16];
