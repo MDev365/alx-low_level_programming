@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_hex - convert int to hex and print it
@@ -12,11 +13,6 @@ void print_hex(int num, int digits)
 	const char hex_lookup[] = "0123456789abcdef";
 	int i;
 	char hex[20];
-
-    /*
-	*hex[0] = hex_lookup[(c >> 4) & 0xf];
-    *hex[1] = hex_lookup[c & 0xf];
-	*/
 
 	for (i = 0 ; num != 0 ; i++)
 	{
@@ -43,6 +39,7 @@ void print_buffer(char *b, int size)
 {
 	int i, j;
 
+	fflush(stdout);
 	if (size <= 0)
 		_putchar('\n');
 
