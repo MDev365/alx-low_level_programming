@@ -23,7 +23,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			break;
 		}
 		node = node->next;
-		i++
+		i++;
 	}
 	if (found)
 	{
