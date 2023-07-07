@@ -24,7 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new_value == NULL)
 		return (0);
 	idx = key_index((const unsigned char *) key, ht->size);
-	node = ht->array(idx);
+	node = ht->array[idx];
 	while (node)
 	{
 		if (strcmp(node->key, key) == 0)
