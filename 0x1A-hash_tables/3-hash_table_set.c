@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 
-/*
+/**
  * hash_table_set - adds an element to the hash table.
  * @ht: is the hash table you want to add or update the key/value to.
  * @key: is the key. key can not be an empty string.
@@ -17,7 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *new_value;
 
 	if (ht == NULL || key == NULL || value == NULL ||
-		key[0] = '\0')
+		key[0] == '\0')
 		return (0);
 
 	new_value = strdup(value);
@@ -51,5 +51,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->value = new_value;
 	new_node->next = ht->array[idx];
 	ht->array[idx] = new_node;
-	return (1);	
+	return (1);
 }
