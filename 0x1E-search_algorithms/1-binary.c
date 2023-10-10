@@ -2,7 +2,7 @@
 
 /**
  * binary_search - searches for a value in an array of integers
- * 		   using the Binary search algorithm
+ *			using the Binary search algorithm
  * @array: a pointer to the first element of the array to search in
  * @size: is the number of elements in array
  * @value: is the value to search for
@@ -18,9 +18,8 @@ int binary_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 
-	
 	start = 0;
-	end = size -1 ;
+	end = size - 1;
 	mid = start + (end - start) / 2;
 	while (start != end)
 	{
@@ -42,7 +41,7 @@ int binary_search(int *array, size_t size, int value)
 			end = mid;
 		else
 			start = mid + 1;
-		mid = start + (end - start) / 2; 
+		mid = start + (end - start) / 2;
 	}
 
 	if (found)
