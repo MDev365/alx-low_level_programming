@@ -38,7 +38,7 @@ int binary_search(int *array, size_t size, int value)
 			break;
 		}
 		else if (value < array[mid])
-			end = mid;
+			end = mid - 1;
 		else
 			start = mid + 1;
 		mid = (end + start) / 2;
