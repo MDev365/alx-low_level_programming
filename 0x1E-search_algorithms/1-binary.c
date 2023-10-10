@@ -41,7 +41,7 @@ int binary_search(int *array, size_t size, int value)
 			end = mid;
 		else
 			start = mid + 1;
-		mid = start + (end - start) / 2;
+		mid = (end + start) / 2;
 	}
 
 	if (found)
