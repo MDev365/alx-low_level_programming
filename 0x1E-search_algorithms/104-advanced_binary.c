@@ -21,31 +21,29 @@ int advanced_binary(int *array, size_t size, int value)
 	start = 0;
 	end = size - 1;
 	mid = (end + start) / 2;
-	while (start <= end)
-	{
-		printf("Searching in array:");
-		for (i = start ; i <= end ; i++)
-		{
-			printf(" %d", array[i]);
-			if (i != end)
-				printf(",");
-			else
-				printf("\n");
-		}
-		if (value == array[mid])
-		{
-			found = 1;
-			break;
-		}
-		else if (value < array[mid])
-			end = mid - 1;
-		else
-			start = mid + 1;
-		mid = (end + start) / 2;
-	}
+	if (start == end)
+		return (-1);
 
-	if (found)
+	
+	printf("Searching in array:");
+	for (i = start ; i <= end ; i++)
+	{
+		printf(" %d", array[i]);
+		if (i != end)
+			printf(",");
+		else
+			printf("\n");
+	}
+	if (value == array[mid])
+	{
 		return (mid);
+	}
+	else if (value < array[mid])
+		end = mid - 1;
+	else
+		start = mid + 1;
+	mid = (end + start) / 2;
+	advanced_binary(&array[start], end - start + 1, value)
 
 	return (-1);
 }
