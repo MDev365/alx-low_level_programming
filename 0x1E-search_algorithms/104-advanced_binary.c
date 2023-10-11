@@ -24,7 +24,6 @@ int advanced_binary(int *array, size_t size, int value)
 	if (start == end)
 		return (-1);
 
-	
 	printf("Searching in array:");
 	for (i = start ; i <= end ; i++)
 	{
