@@ -12,7 +12,7 @@
  *         If value is not present in array or if array is NULL,
  *         your function must return -1
  */
-int binary_search(int *array, size_t start, size_t end, int value)
+int binary(int *array, size_t start, size_t end, int value)
 {
 	size_t i, found = 0, mid;
 
@@ -90,5 +90,5 @@ int exponential_search(int *array, size_t size, int value)
 	low = pos / 2;
 	high = pos >= size? size - 1 : pos;
 	printf("Value found between indexes [%ld] and [%ld]\n", low, high);
-	return (binary_search(array, low, high, value));
+	return (binary(array, low, high, value));
 }
