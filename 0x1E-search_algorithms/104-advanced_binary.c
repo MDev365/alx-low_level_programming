@@ -43,7 +43,7 @@ int advanced_binary(int *array, size_t size, int value)
 	else
 		start = mid + 1;
 	mid = (end + start) / 2;
-	advanced_binary(&array[start], end - start + 1, value)
+	advanced_binary(&array[start], end - start + 1, value);
 
 	return (-1);
 }
