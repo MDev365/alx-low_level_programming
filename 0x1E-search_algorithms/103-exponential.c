@@ -1,8 +1,8 @@
 #include "search_algos.h"
 
 /**
- * binary_search - searches for a value in an array of integers
- *			using the Binary search algorithm
+ * binary - searches for a value in an array of integers
+ *		using the Binary search algorithm
  * @array: a pointer to the first element of the array to search in
  * @start: is the start of elements in array
  * @end: is the end of elements in array
@@ -88,7 +88,7 @@ int exponential_search(int *array, size_t size, int value)
 		return (pos);
 
 	low = pos / 2;
-	high = pos >= size? size - 1 : pos;
+	high = pos >= size ? size - 1 : pos;
 	printf("Value found between indexes [%ld] and [%ld]\n", low, high);
 	return (binary(array, low, high, value));
 }
