@@ -13,7 +13,7 @@
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	size_t i, found = 0, start, end, mid;
+	size_t i, start, end, mid;
 
 	if (array == NULL)
 		return (-1);
