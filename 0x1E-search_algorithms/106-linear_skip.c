@@ -12,7 +12,6 @@
 skiplist_t *list_goto_index(skiplist_t *list, size_t idx)
 {
 	skiplist_t *head;
-	size_t i = 0;
 
 	if (list == NULL)
 		return (NULL);
@@ -55,14 +54,14 @@ skiplist_t *linear_skip(skiplist_t *list, size_t size, int value)
 	{
 		start = end;
 		end += jump_size;
-		if (end >= size)
+		if (end >= (int) size)
 			end = size - 1;;
 		current = list_goto_index(list, end);
 		printf("Value checked at index [%d] = [%d]\n", end, current->n);
 	}
 
 	printf("Value found between indexes [%i] and [%i]\n", start, end);
-	for (i = start ; i <= end && i < size ; i++)
+	for (i = start ; i <= end && i < (int) size ; i++)
 	{
 		current = list_goto_index(list, i);
 		printf("Value checked at index [%d] = [%d]\n", i, current->n);
