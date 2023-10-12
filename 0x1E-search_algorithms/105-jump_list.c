@@ -1,10 +1,35 @@
 #include "search_algos.h"
 #include <math.h>
 
+
 /**
- * jump_search - searches for a value in an array of integers
+ * list_goto_index - goto index in list
+ * @list: list
+ * @idx: index
+ *
+ * Return: pointer to element in the list or NULL
+ */
+listint_t *list_goto_index(listint_t *list, size_t idx)
+{
+	listint_t *head;
+	size_t i = 0;
+
+	if (list == NULL)
+		return (NULL);
+	head = list;
+	while (head->next != NULL && head->index < idx)
+	{
+		head = head->next;
+	}
+	return (head);
+}
+
+
+
+/**
+ * jump_list - searches for a value in an array of integers
  *                 using the Jump search algorithm
- * @array: a pointer to the first element of the array to search in
+ * @list: a pointer to the first element of the array to search in
  * @size: is the number of elements in array
  * @value: is the value to search for
  *
@@ -12,32 +37,37 @@
  *         If value is not present in array or if array is NULL,
  *         your function must return -1
  */
-int jump_search(int *array, size_t size, int value)
+listint_t *jump_list(listint_t *list, size_t size, int value)
 {
 	int i, jump_size, start, end, found = 0;
+	listint_t *head, *current;
 
-	if (array == NULL || size == 0)
-		return (-1);
+	if (list == NULL || size == 0)
+		return (NULL);
+	head = list;
 
 	jump_size = sqrt(size);
 	start = 0;
 	end = jump_size;
 
-	printf("Value checked array[%d] = [%d]\n", start, array[start]);
-	while (array[end] < value)
+	current = list_goto_index(list, end);
+	printf("Value checked array[%d] = [%d]\n", end, current->n);
+	while (current->n < value)
 	{
+		printf("Value checked array[%d] = [%d]\n", end, current->n);
 		start = end;
 		end += jump_size;
-		printf("Value checked array[%d] = [%d]\n", start, array[start]);
 		if (end >= size)
 			break;
+		current = list_goto_index(list, end);
 	}
 
 	printf("Value found between indexes [%i] and [%i]\n", start, end);
 	for (i = start ; i <= end && i < size ; i++)
 	{
-		printf("Value checked array[%d] = [%d]\n", i, array[i]);
-		if (array[i] == value)
+		current = list_goto_index(list, i);
+		printf("Value checked array[%d] = [%d]\n", i, current->n);
+		if (current->n == value)
 		{
 			found = 1;
 			break;
@@ -45,7 +75,7 @@ int jump_search(int *array, size_t size, int value)
 	}
 
 	if (found == 1)
-		return (i);
+		return (current);
 
-	return (-1);
+	return (NULL);
 }
