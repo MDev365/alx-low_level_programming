@@ -51,7 +51,6 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		start = current->index;
 		current = current->express;
 		end = current->index;
-		current = current->express;
 		printf("Value checked at index [%d] = [%d]\n", end, current->n);
 	}
 
