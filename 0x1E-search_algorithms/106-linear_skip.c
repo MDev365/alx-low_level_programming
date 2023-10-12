@@ -40,11 +40,10 @@ skiplist_t *list_goto_index(skiplist_t *list, size_t idx)
 skiplist_t *linear_skip(skiplist_t *list, size_t size, int value)
 {
 	int i, jump_size, start, end, found = 0;
-	skiplist_t *head, *current;
+	skiplist_t *current;
 
 	if (list == NULL || size == 0)
 		return (NULL);
-	head = list;
 
 	jump_size = sqrt(size);
 	start = 0;
