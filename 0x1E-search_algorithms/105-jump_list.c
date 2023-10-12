@@ -52,14 +52,14 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 	current = list_goto_index(list, end);
 	printf("Value checked array[%d] = [%d]\n", end, current->n);
-	while (current->n < value)
+	while (current->n < value && end != size - 1)
 	{
-		printf("Value checked array[%d] = [%d]\n", end, current->n);
 		start = end;
 		end += jump_size;
 		if (end >= size)
-			break;
+			end = size - 1;;
 		current = list_goto_index(list, end);
+		printf("Value checked array[%d] = [%d]\n", end, current->n);
 	}
 
 	printf("Value found between indexes [%i] and [%i]\n", start, end);
