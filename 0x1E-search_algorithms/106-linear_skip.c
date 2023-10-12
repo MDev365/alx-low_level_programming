@@ -41,7 +41,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	int i, start, end, found = 0;
 	skiplist_t *current;
 
-	if (list == NULL || size == 0)
+	if (list == NULL)
 		return (NULL);
 
 	current = list->express;
