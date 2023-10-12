@@ -36,27 +36,22 @@ skiplist_t *list_goto_index(skiplist_t *list, size_t idx)
  *         If value is not present in array or if array is NULL,
  *         your function must return -1
  */
-skiplist_t *linear_skip(skiplist_t *list, size_t size, int value)
+skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	int i, jump_size, start, end, found = 0;
+	int i, start, end, found = 0;
 	skiplist_t *current;
 
 	if (list == NULL || size == 0)
 		return (NULL);
 
-	jump_size = sqrt(size);
-	start = 0;
-	end = jump_size;
-
-	current = list_goto_index(list, end);
+	current = list->express;
 	printf("Value checked at index [%d] = [%d]\n", end, current->n);
-	while (current->n < value && end != size - 1)
+	while (current->n < value && current->express != NULL)
 	{
-		start = end;
-		end += jump_size;
-		if (end >= (int) size)
-			end = size - 1;;
-		current = list_goto_index(list, end);
+		start = current->index;
+		current = current->express;
+		end = current->index;
+		current = current->express;
 		printf("Value checked at index [%d] = [%d]\n", end, current->n);
 	}
 
