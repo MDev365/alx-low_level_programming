@@ -66,7 +66,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	for (i = start ; i <= end && i < size ; i++)
 	{
 		current = list_goto_index(list, i);
-		printf("Value checked array[%d] = [%d]\n", i, current->n);
+		printf("Value checked at index [%d] = [%d]\n", i, current->n);
 		if (current->n == value)
 		{
 			found = 1;
