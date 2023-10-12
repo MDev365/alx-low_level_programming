@@ -29,7 +29,6 @@ skiplist_t *list_goto_index(skiplist_t *list, size_t idx)
  * linear_skip - searches for a value in an array of integers
  *                 using the linear_skip search algorithm
  * @list: a pointer to the first element of the array to search in
- * @size: is the number of elements in array
  * @value: is the value to search for
  *
  * Return: the first index where value is located
